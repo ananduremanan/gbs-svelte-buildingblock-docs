@@ -1,4 +1,43 @@
 ### MultiSelect
 
+countries.ts
 
-Some Data
+```
+export let countries = [
+	{ value: 'us', label: 'United States'},
+	{ value: 'fr', label: 'France'},
+	{ value: 'gb', label: 'United Kingdom' },
+	{ value: 'de', label: 'Germany' },
+	{ value: 'jp', label: 'Japan' },
+	{ value: 'au', label: 'Australia' },
+	{ value: 'cn', label: 'China' },
+	{ value: 'in', label: 'India' },
+	{ value: 'mx', label: 'Mexico' },
+]
+```
+
++page.svelte
+
+```svelte
+<script lang="ts">
+	import { countries } from '$lib/countries';
+	import Select from '@grampro/svelte-block/MultiSelect.svelte';
+
+	let selected: any = undefined;
+</script>
+
+<div>
+	<Select items={countries} bind:value={selected} />
+</div>
+```
+
+##### Props
+
+| Property        | Type      | Description                                                                       |
+| --------------- | --------- | --------------------------------------------------------------------------------- |
+| placeholder     | String    | The placeholder text displayed when no item is selected.                          |
+| items           | Array     | An array of items to populate the select dropdown.                                |
+| selected        | Any Array | The currently selected items.                                                     |
+| lazy            | Boolean   | If set to `true`, the multi select component enables lazy loading of items.       |
+| truncate        | Boolean   | If set to `false`, the multi select component disables truncating selected items. |
+| enableSelectAll | Boolean   | If set to `true`, the multi select component enables select all option            |

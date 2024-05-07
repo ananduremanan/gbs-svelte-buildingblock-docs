@@ -1,0 +1,21 @@
+### Button
+
+```svelte
+<script lang="ts">
+	import Select from '@grampro/svelte-block/Button.svelte';
+</script>
+
+<div>
+	<Button>Submit</Button>
+</div>
+```
+
+##### Props
+
+| Property | Type     | Description                               |
+| -------- | -------- | ----------------------------------------- |
+| children | <slot /> | The placeholder text displayed in button. |
+| href     | string   | Path for navigation.                      |
+| disabled | boolean  | Disabling button.                         |
+| target   | string   | Target for navigation.                    |
+| outline  | Boolean  | Outline Style.                            |

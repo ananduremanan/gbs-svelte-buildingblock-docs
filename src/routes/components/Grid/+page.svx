@@ -67,3 +67,18 @@ This will tell how to use Grid
 		/>
 </div>
 ```
+
+### Props
+
+| Property          | Type         | Description                                                                                                                                                       |
+| ----------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| dataSource        | Object Array | Receives an array of objects and maps it to create the grid columns.                                                                                              |
+| columns           | Object Array | Receives an array of objects providing the header part of the grid.                                                                                               |
+| pageSettings      | Object       | Provides settings for pagination (both server-side rendering and client-side rendering).                                                                          |
+| enableSearch      | Boolean      | Enables a global search box.                                                                                                                                      |
+| gridHeight        | Number       | Explicitly changes the height of the grid.                                                                                                                        |
+| lazy              | Boolean      | Enables the grid to lazy load data from the server. Certain functionalities such as global search, pagination, etc., may behave differently in lazy loaded grids. |
+| enableExcelExport | Boolean      | Exports grid data as an Excel file.                                                                                                                               |
+| enablePdfExport   | Boolean      | Exports grid data as a PDF file.                                                                                                                                  |
+| excelName         | String       | The name of the exported Excel file.                                                                                                                              |
+| pdfName           | String       | The name of the exported PDF file.
