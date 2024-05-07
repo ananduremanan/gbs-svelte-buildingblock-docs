@@ -17,11 +17,13 @@
   onMount(fetchData);
 </script>
 
-<Navbar />
-<div class="px-4 flex h-screen mt-4">
+<Navbar {menuItemsArray} />
+<div class="px-4 flex h-screen mt-24">
   <Sidebar {menuItemsArray} />
   <div>
-    <article class="prose lg:prose-xl dark:prose-invert px-4 md:text-base">
+    <article
+      class="prose lg:prose-xl dark:prose-invert px-4 md:text-base sx-content dark:prose-pre:bg-gray-700"
+    >
       <slot />
     </article>
   </div>

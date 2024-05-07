@@ -1,4 +1,6 @@
-# Svelte Docs Template Using SvelteKit, MDSVEX and Tailwind CSS
+# How to Create Svelte Docs Template Using SvelteKit, MDSVEX and Tailwind CSS
+
+This is a smaple template for Svelte Documentations
 
 ## Intallation
 

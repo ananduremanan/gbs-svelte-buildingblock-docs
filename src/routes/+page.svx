@@ -1,9 +1,30 @@
-### Introduction
+<script lang="ts">
+  import { onMount } from "svelte";
+  import { getLatestVersion } from "$lib";
 
-This Documentation describes how to install and use `gbs-svelte-block` component library.
+  let latestVersion = "";
+  onMount(async () => {
+    latestVersion = await getLatestVersion();
+  });
+</script>
 
-#### Installation
+## Introduction
+
+LatestVersion : <span class="font-bold">{latestVersion}<span>
+
+Svelte Version of GBS Building Block. Version. This Documentation describes how to install and use `gbs-svelte-block` component library.
+
+
+#### Additional Installation Steps.
+
+`@grampro/svelte-block` is heavily relies on tailwind for styling, so you need to setup tailwind in your project. Installation for svelte tailwind can be found in [Here](https://tailwindcss.com/docs/guides/sveltekit).
+
+### Installation
 
 ```bash
     npm i @grampro/svelte-block
 ```
+
+### NPM Registry
+
+npm registry for the package can be found [here](https://www.npmjs.com/package/@grampro/svelte-block)
