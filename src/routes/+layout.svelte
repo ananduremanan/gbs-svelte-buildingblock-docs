@@ -18,9 +18,9 @@
 </script>
 
 <Navbar {menuItemsArray} />
-<div class="px-4 flex h-screen mt-24">
+<div class="px-4 flex flex-col md:flex-row h-full mt-24">
   <Sidebar {menuItemsArray} />
-  <div>
+  <div class="flex-grow">
     <article
       class="prose lg:prose-xl dark:prose-invert px-4 md:text-base sx-content dark:prose-pre:bg-gray-700"
     >

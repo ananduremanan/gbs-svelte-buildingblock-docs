@@ -10,12 +10,12 @@ h3 {
   margin-top: 1rem !important;
 }
 
-table th{
-  @apply border p-1
+table th {
+  @apply border p-1;
 }
 
-td{
-  @apply border
+td {
+  @apply border;
 }
 
 .language-svelte {
@@ -40,4 +40,8 @@ td{
 
 .language-svelte .language-javascript {
   @apply text-green-300;
+}
+
+.prose {
+  max-width: 85ch !important;
 }
