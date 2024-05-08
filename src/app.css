@@ -49,3 +49,16 @@ tr {
 .prose {
   max-width: 85ch !important;
 }
+
+.sample tr {
+  @apply even:bg-transparent dark:even:bg-transparent;
+}
+
+.sample tr:first-child {
+  display: none;
+}
+
+.grid-img {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
