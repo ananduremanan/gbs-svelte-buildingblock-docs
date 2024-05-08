@@ -30,5 +30,5 @@
 </script>
 
 <div class="sample">
-  <Grid {columns} {dataSource} pageSettings={{ pageNumber: 5 }} />
+  <Grid {columns} {dataSource} pageSettings={{ pageNumber: 6 }} />
 </div>
