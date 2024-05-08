@@ -15,7 +15,7 @@
 </script>
 
 <nav
-  class="p-4 flex justify-between items-center glass fixed top-0 dark:text-white z-50 md:px-16 border-b w-full dark:border-b-0"
+  class="p-4 flex justify-between items-center glass fixed top-0 dark:text-white z-50 md:px-12 border-b w-full dark:border-b-0"
 >
   <a href="/">GBS Svelte Building Block</a>
   <div class="flex justify-center items-center gap-2">

@@ -1,6 +1,5 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  import { twMerge } from "tailwind-merge";
 
   export let menuItemsArray: any[];
 
@@ -10,7 +9,7 @@
   }
 </script>
 
-<div class="md:w-1/4 hidden md:block border-r sx-sidebar">
+<div class="md:w-1/4 hidden md:block border-r sx-sidebar overflow-y-auto">
   {#if menuItemsArray}
     <ul class="dark:text-white px-12">
       <li
