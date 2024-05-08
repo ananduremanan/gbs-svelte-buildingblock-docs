@@ -1,8 +1,10 @@
 ### Button
 
+Button component is a fundamental element in user interface design, enabling users to interact with applications effectively. 
+
 ```svelte
 <script lang="ts">
-	import Select from '@grampro/svelte-block/Button.svelte';
+	import Button from '@grampro/svelte-block/Button.svelte';
 </script>
 
 <div>
@@ -14,7 +16,7 @@
 
 | Property | Type     | Description                               |
 | -------- | -------- | ----------------------------------------- |
-| children | <slot /> | The placeholder text displayed in button. |
+| children | any      | The placeholder text displayed in button. |
 | href     | string   | Path for navigation.                      |
 | disabled | boolean  | Disabling button.                         |
 | target   | string   | Target for navigation.                    |

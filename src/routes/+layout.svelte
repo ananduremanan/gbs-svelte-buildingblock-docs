@@ -26,5 +26,10 @@
     >
       <slot />
     </article>
+    <div class="flex flex-col px-4 mb-8">
+      <div class="text-sm mt-10 text-gray-500 justify-end prose">
+        last updated on
+      </div>
+    </div>
   </div>
 </div>

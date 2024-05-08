@@ -1,6 +1,6 @@
-## Grid Component
+### Grid
 
-This will tell how to use Grid
+Grids are powerful tools for organizing, visualizing, and interacting with tabular data in software applications.
 
 
 ```svelte
@@ -68,7 +68,7 @@ This will tell how to use Grid
 </div>
 ```
 
-### Props
+#### Props
 
 | Property          | Type         | Description                                                                                                                                                       |
 | ----------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |

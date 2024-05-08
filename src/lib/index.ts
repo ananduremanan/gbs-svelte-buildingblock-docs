@@ -8,7 +8,5 @@ export async function getLatestVersion() {
   );
   const ver = await res.json();
   latestVersion = ver.version;
-  console.log(latestVersion);
-
   return latestVersion;
 }

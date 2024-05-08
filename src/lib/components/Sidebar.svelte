@@ -11,7 +11,7 @@
 </script>
 
 <div
-  class="md:w-1/4 hidden md:block border-r sx-sidebar static overflow-y-auto"
+  class="md:w-1/4 hidden md:block border-r sx-sidebar overflow-y-auto"
 >
   {#if menuItemsArray}
     <ul class="dark:text-white px-12">

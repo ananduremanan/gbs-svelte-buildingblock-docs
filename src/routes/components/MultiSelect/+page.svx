@@ -1,5 +1,7 @@
 ### MultiSelect
 
+Multi-select is a user interface pattern that allows users to select multiple items from a list or grid simultaneously.
+
 countries.ts
 
 ```
@@ -31,7 +33,7 @@ export let countries = [
 </div>
 ```
 
-##### Props
+#### Props
 
 | Property        | Type      | Description                                                                       |
 | --------------- | --------- | --------------------------------------------------------------------------------- |

@@ -1,5 +1,7 @@
 ### Select
 
+Select is a simple yet effective UI pattern for enabling users to make single-item selections from a list or set of options.
+
 countries.ts
 
 ```
@@ -31,7 +33,7 @@ export let countries = [
 </div>
 ```
 
-##### Props
+#### Props
 
 | Property    | Type    | Description                                                           |
 | ----------- | ------- | --------------------------------------------------------------------- |
