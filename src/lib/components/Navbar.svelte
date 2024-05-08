@@ -19,9 +19,9 @@
 >
   <a href="/">GBS Svelte Building Block</a>
   <div class="flex justify-center items-center gap-2">
-    <span class="text-xs p-1 ml-1 rounded-xl bg-red-500 text-white cursor-help"
+    <!-- <span class="text-xs p-1 ml-1 rounded-xl bg-red-500 text-white cursor-help"
       >Site Under Development</span
-    >
+    > -->
     <DarkMode />
     <input
       placeholder="Search Documentation"
