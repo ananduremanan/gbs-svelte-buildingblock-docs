@@ -18,6 +18,10 @@ td {
   @apply border;
 }
 
+tr {
+  @apply even:bg-gray-50 dark:even:bg-gray-700;
+}
+
 .language-svelte {
   @apply text-yellow-300;
 }

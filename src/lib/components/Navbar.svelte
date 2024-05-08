@@ -11,6 +11,7 @@
   }
 
   let showMenuMobile = false;
+  let searchKeyword = "";
 </script>
 
 <nav
@@ -25,6 +26,7 @@
     <input
       placeholder="Search Documentation"
       class="bg-gray-100 px-2 py-1 rounded-lg outline-none hidden md:block"
+      bind:value={searchKeyword}
     />
     <a
       href="https://github.com/ananduremanan/svelte-docs-template"
