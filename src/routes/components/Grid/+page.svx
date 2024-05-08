@@ -78,45 +78,6 @@ Grids are powerful tools for organizing, visualizing, and interacting with tabul
 
 #### Sample Code
 
-Here is the breakdown for the above sample.
-
-- Column array
-
- 	 ````svelte
-  const columns = [
-    {
-      field: "imgUrl",
-      width: "200",
-      textAlign: "Right",
-      template: ImageAction,
-      showTemplateInExport: true,
-      headerText: "Avatar",
-    },
-    {
-      field: "id",
-      width: "200",
-      textAlign: "Right",
-      headerText: "Employee ID",
-    },
-    { field: "name", width: "100", headerText: "Name" },
-    {
-      field: "jobTitle",
-      width: "100",
-      textAlign: "Right",
-      headerText: "Job Title",
-    },
-    { field: "place", headerText: "Place", width: "200" },
-  ];
-
-- ImageAction.svelte
-
-	````svelte
-	<script lang="ts">
-	  export let rowData: any;
-	</script>
-
-	<img src={rowData.imgUrl} alt="" class="w-10 h-10 rounded-full grid-img" />
-
 
 #### Props
 
