@@ -1,0 +1,57 @@
+<script>
+	import Modal from './Modal.svelte'
+</script>
+
+### Modal
+
+The modal component is a versatile UI element commonly used to display information, notifications, or interactive content in a temporary overlay. It typically appears as a popup window positioned over the main content, providing a focused view while temporarily blocking interaction with the rest of the page.
+
++page.svelte
+
+```svelte
+<script lang="ts">
+	import Button from "$lib/button/Button.svelte";
+	import Modal from "$lib/modal/Modal.svelte";
+
+	let showModal = false;
+</script>
+
+<div>
+	<Button
+		on:click={() => {
+			showModal = !showModal;
+		}}>Show Modal</Button
+	>
+
+	<Modal bind:showModal autoclose modalTitle="Disclaimer">
+		<p class="text-xs">
+			The information provided on this website is for general informational purposes only. It is not
+			intended to be a substitute for professional advice, diagnosis, or treatment. Always seek the
+			advice of your physician or other qualified health provider with any questions you may have
+			regarding a medical condition. Never disregard professional medical advice or delay in seeking
+			it because of something you have read on this website.
+		</p>
+		<div>
+			<Button class="mt-2">Accept</Button>
+		</div>
+	</Modal>
+</div>
+
+```
+
+#### Sample
+<Modal />
+
+#### Props
+
+| Property           | Type          | Description                                                                    |
+| ------------------ | ------------- | ------------------------------------------------------------------------------ |
+| showModal          | Boolean       | Controls whether the modal is shown or hidden.                                 |
+| modalTitle         | String        | The title displayed at the top of the modal.                                   |
+| autoclose          | Boolean       | If `true`, the modal will automatically close.                                 |
+| modalClass         | String        | Additional CSS classes for styling the modal container.                        |
+| classModal         | Undefined     | Deprecated.                                                                    |
+| modalContentClass  | String        | Additional CSS classes for styling the modal content container.                |
+| classModalContent  | Undefined     | Deprecated.                                                                    |
+| modalTitleClass    | String        | Additional CSS classes for styling the modal title.                            |
+| classModalTitle    | Undefined     | Deprecated.                                                                    |

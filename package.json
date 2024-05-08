@@ -28,7 +28,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@grampro/svelte-block": "^0.0.18",
+		"@grampro/svelte-block": "^0.0.20",
 		"jspdf-autotable": "^3.8.2",
 		"lucide-svelte": "^0.378.0",
 		"tailwind-merge": "^2.3.0",
