@@ -63,7 +63,25 @@ tr {
   margin-bottom: 0 !important;
 }
 
-hr{
+hr {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
+}
+
+.icon-rotate {
+  animation: rotate 2s linear infinite;
+  cursor: pointer;
+}
+
+.icon-rotate:hover {
+  animation: none;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

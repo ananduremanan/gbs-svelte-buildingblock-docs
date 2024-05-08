@@ -14,6 +14,16 @@
     menuItemsArray = menuItems;
   }
 
+  //*** Handling Sub Folders*/
+  // async function fetchData() {
+  //   const modules = import.meta.glob("./components/**/*.svx");
+  //   const menuItems = Object.keys(modules).map((item) =>
+  //     item.replace("./components/", "").split("/")
+  //   );
+  //   menuItemsArray = menuItems;
+  //   console.log(modules, menuItems);
+  // }
+
   onMount(fetchData);
 </script>
 
