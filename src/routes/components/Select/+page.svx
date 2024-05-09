@@ -1,3 +1,7 @@
+<script>
+	import Select from './Select.svelte'
+</script>
+
 ### Select
 
 Select is a simple yet effective UI pattern for enabling users to make single-item selections from a list or set of options.
@@ -32,6 +36,12 @@ export let countries = [
 	<Select items={countries} bind:value={selected} />
 </div>
 ```
+
+#### Sample
+
+<Select />
+
+<span class="notes bg-red-100 p-2 rounded-xl text-black">Nb: Style issue with svx may cause some abnormalities in the component preview style. Working to fix this.</span>
 
 #### Props
 

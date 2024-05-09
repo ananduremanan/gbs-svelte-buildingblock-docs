@@ -56,6 +56,11 @@ hr {
   margin-bottom: 0 !important;
 }
 
+.notes{
+  margin-top: 1rem !important;
+  display: block;
+}
+
 .icon-rotate {
   animation: 2s linear infinite rotate;
   cursor: pointer;
