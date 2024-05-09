@@ -18,10 +18,6 @@ td {
   @apply border;
 }
 
-tr {
-  @apply even:bg-gray-50 dark:even:bg-gray-700;
-}
-
 .language-svelte {
   @apply text-yellow-300;
 }
@@ -50,26 +46,18 @@ tr {
   max-width: 85ch !important;
 }
 
-.sample tr {
-  @apply even:bg-transparent dark:even:bg-transparent;
-}
-
 .sample tr:first-child {
   display: none;
 }
 
-.grid-img {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
-
+.grid-img,
 hr {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
 
 .icon-rotate {
-  animation: rotate 2s linear infinite;
+  animation: 2s linear infinite rotate;
   cursor: pointer;
 }
 
@@ -79,9 +67,11 @@ hr {
 
 @keyframes rotate {
   from {
-    transform: rotate(0deg);
+    transform: rotate(0);
   }
+
   to {
     transform: rotate(360deg);
-  }
+  } 
 }
+
