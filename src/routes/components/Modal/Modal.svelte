@@ -13,7 +13,7 @@
   >
 
   <Modal bind:showModal autoclose modalTitle="Disclaimer" classModalContent="md:w-[50vw]">
-    <p class="text-xs">
+    <p class="text-xs dark:text-black">
       The information provided on this website is for general informational
       purposes only. It is not intended to be a substitute for professional
       advice, diagnosis, or treatment. Always seek the advice of your physician
