@@ -1,3 +1,7 @@
+<script>
+	import MultiSelect from './MultiSelect.svelte'
+</script>
+
 ### MultiSelect
 
 Multi-select is a user interface pattern that allows users to select multiple items from a list or grid simultaneously.
@@ -32,6 +36,12 @@ export let countries = [
 	<Select items={countries} bind:value={selected} />
 </div>
 ```
+
+#### Sample
+
+<MultiSelect />
+
+<span class="notes bg-red-100 p-2 rounded-xl text-black">Nb: Style issue with svx may cause some abnormalities in the component preview style. Working to fix this.</span>
 
 #### Props
 
