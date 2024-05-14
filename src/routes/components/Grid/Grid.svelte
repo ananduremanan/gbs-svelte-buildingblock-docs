@@ -18,7 +18,7 @@
       textAlign: "Right",
       headerText: "Employee ID",
     },
-    { field: "name", width: "100", headerText: "Name" },
+    { field: "name", width: "100", headerText: "Name", filter: true },
     {
       field: "jobTitle",
       width: "100",
@@ -29,6 +29,6 @@
   ];
 </script>
 
-<div class="sample">
+<div class="sample relative">
   <Grid {columns} {dataSource} pageSettings={{ pageNumber: 6 }} />
 </div>

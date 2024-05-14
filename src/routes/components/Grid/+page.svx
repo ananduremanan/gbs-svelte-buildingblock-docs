@@ -76,8 +76,6 @@ Grids are powerful tools for organizing, visualizing, and interacting with tabul
 
 <Grid />
 
-#### Sample Code
-
 
 #### Props
 
@@ -93,3 +91,12 @@ Grids are powerful tools for organizing, visualizing, and interacting with tabul
 | enablePdfExport   | Boolean      | Exports grid data as a PDF file.                                                                                                                                  |
 | excelName         | String       | The name of the exported Excel file.                                                                                                                              |
 | pdfName           | String       | The name of the exported PDF file.
+
+#### Adding Filter To Columns
+
+```svelte
+  const columns = [
+    { field: "name", width: "100", headerText: "Name", filter: true }, // Add filter: true
+    { field: "place", headerText: "Place", width: "200" },
+  ];
+```
