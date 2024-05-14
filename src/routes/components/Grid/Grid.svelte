@@ -29,6 +29,6 @@
   ];
 </script>
 
-<div class="sample relative">
-  <Grid {columns} {dataSource} pageSettings={{ pageNumber: 6 }} />
+<div class="relative">
+  <Grid {columns} {dataSource} pageSettings={{ pageNumber: 6 }} gridContainerClass="sample" />
 </div>

@@ -79,18 +79,22 @@ Grids are powerful tools for organizing, visualizing, and interacting with tabul
 
 #### Props
 
-| Property          | Type         | Description                                                                                                                                                       |
-| ----------------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| dataSource        | Object Array | Receives an array of objects and maps it to create the grid columns.                                                                                              |
-| columns           | Object Array | Receives an array of objects providing the header part of the grid.                                                                                               |
-| pageSettings      | Object       | Provides settings for pagination (both server-side rendering and client-side rendering).                                                                          |
-| enableSearch      | Boolean      | Enables a global search box.                                                                                                                                      |
-| gridHeight        | Number       | Explicitly changes the height of the grid.                                                                                                                        |
-| lazy              | Boolean      | Enables the grid to lazy load data from the server. Certain functionalities such as global search, pagination, etc., may behave differently in lazy loaded grids. |
-| enableExcelExport | Boolean      | Exports grid data as an Excel file.                                                                                                                               |
-| enablePdfExport   | Boolean      | Exports grid data as a PDF file.                                                                                                                                  |
-| excelName         | String       | The name of the exported Excel file.                                                                                                                              |
-| pdfName           | String       | The name of the exported PDF file.
+| Property                       | Type        | Description                                           		|
+| ------------------------------ | ----------- | -----------------------------------------------------------|
+| dataSource                     | any[]       | The data source for the grid.                         		|
+| columns                        | any[]       | Configuration for the columns in the grid.            		|
+| pageSettings                   | PageSettingsProps | Configuration for the pagination settings.       	|
+| enableSearch                   | boolean     | Determines whether search functionality is enabled.   		|
+| lazy                           | boolean     | Determines whether lazy loading is enabled.           		|
+| enableExcelExport              | boolean     | Enables or disables Excel export functionality.       		|
+| excelName                      | string      | The name of the Excel file when exported.             		|
+| enablePdfExport                | boolean     | Enables or disables PDF export functionality.         		|
+| pdfName                        | string      | The name of the PDF file when exported.               		|
+| gridContainerClass             | string      | Additional CSS class for styling the grid container.  		|
+| gridButtonClass                | string      | Additional CSS class for styling grid buttons.        		|
+| gridHeaderClass                | string      | Additional CSS class for styling grid headers.        		|
+| gridGlobalSearchButtonClass    | string      | Additional CSS class for styling the global search button. |
+| gridPaginationButtonClass      | string      | Additional CSS class for styling pagination buttons.       |
 
 #### Adding Filter To Columns
 
