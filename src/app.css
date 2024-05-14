@@ -2,7 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+/* For WebKit browsers (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+  width: 5px; /* width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* color of the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* color of the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* color of the thumb on hover */
+}
+
+body {
   overflow: hidden;
 }
 
@@ -60,7 +77,7 @@ hr {
   margin-bottom: 0 !important;
 }
 
-.notes{
+.notes {
   margin-top: 1rem !important;
   display: block;
 }
@@ -81,6 +98,5 @@ hr {
 
   to {
     transform: rotate(360deg);
-  } 
+  }
 }
-
