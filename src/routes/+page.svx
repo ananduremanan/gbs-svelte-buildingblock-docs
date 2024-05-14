@@ -35,9 +35,9 @@ or simply install the bootstrapped project(recommended) with
 
 npm registry for the package can be found [here](https://www.npmjs.com/package/@grampro/svelte-block)
 
-For bugs, features and code visit [Github Repo](https://github.com/ananduremanan/svelte-component-library)
+For bugs, features, Contribute and code visit [Github Repo](https://github.com/ananduremanan/svelte-component-library)
 
-##### Known Bugs
+### Known Bugs
 
 - Type Error when installing on projects uses typescript:
   - Temporary Fix for this issue is closing the vs code(in case of vs code) and open the project again. (Status: In Progress)

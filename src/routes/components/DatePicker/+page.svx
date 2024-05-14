@@ -1,0 +1,25 @@
+### DatePicker
+
+The DatePicker component provides users with an intuitive interface for selecting dates within a specified range. It allows for seamless integration into web applications, enabling users to input dates effortlessly and accurately.
+Build with Bits.UI and Shadcn Svelte.
+
++page.svelte
+
+```svelte
+<script lang="ts">
+    import DatePicker from '@grampro/svelte-block/DatePicker.svelte'
+
+    let value: any;
+</script>
+
+<DatePicker bind:value />
+
+```
+
+#### Props
+
+| Property       | Type    | Description                                              |
+| -------------- | ------- | ---------------------------------------------------------|
+| value          | any     | The selected date value.                                 |
+| placeholder    | String  | The placeholder text displayed when no date is selected. |
+| showCalender   | Boolean | Controls whether the calendar is shown or hidden.        |
