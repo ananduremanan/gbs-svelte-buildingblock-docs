@@ -103,9 +103,13 @@ hr {
   animation: none;
 }
 
-.otp-container{
+.otp-container {
   display: flex;
   gap: 10px !important;
+}
+
+.experimental-img {
+  border-radius: 15px;
 }
 
 @keyframes rotate {

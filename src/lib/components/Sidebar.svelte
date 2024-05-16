@@ -24,6 +24,11 @@
           <a href={`/components/${menu}`} class="w-full block p-1">{menu}</a>
         </li>
       {/each}
+      <li
+        class={`mt-2 w-full py-1 ${current_url === "/Experimental" ? "bg-blue-200 rounded-lg text-blue-500 dark:bg-blue-300" : ""}`}
+      >
+        <a href={`/Experimental`} class="w-full block p-1">Experimental</a>
+      </li>
     </ul>
   {/if}
 </div>

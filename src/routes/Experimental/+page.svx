@@ -1,0 +1,61 @@
+<script>
+    import ExperimentalHeader from './ExperimentalHeader.svelte'
+    import Carousal from './Carousal.svelte'
+</script>
+
+<ExperimentalHeader />
+
+### Experimental
+
+This Part of Documentation features experimental components(Even though most of the components are experimental 😘).
+
+Experimental Components usually found with beta realease of the [package](https://www.npmjs.com/package/@grampro/svelte-block?activeTab=versions). 
+So check if any beta releases available with experimentals and feel free to play around.
+
+### Components
+
+#### Carousal
+
+Carousal can be used to slide through multiple elements and images
+
+<Carousal />
+
+#### Code
+
+```svelte
+<script lang="ts">
+	import Carousal from '@grampro/svelte-block/Carousal.svelte';
+</script>
+	<Carousal perPage={1} autoplay={3000}>
+		<div class="w-full flex rounded-lg h-auto md:h-50 px-2">
+			<img
+				src="https://www.sony.net/Products/di_photo-gallery/images/extralarge/1634.JPG"
+				alt=""
+				class="w-full object-cover rounded-lg"
+			/>
+		</div>
+		<div class="w-full flex rounded-lg h-auto md:h-50 px-2">
+			<img
+				src="https://www.sony.net/Products/di_photo-gallery/images/extralarge/1631.JPG"
+				alt=""
+				class="w-full object-cover rounded-lg"
+			/>
+		</div>
+	</Carousal>
+```
+
+#### Props
+
+| Property       | Type     | Default     | Description                                                                 |
+| -------------- | -------- | ----------- | --------------------------------------------------------------------------- |
+| perPage        | Number   | 1           | Number of slides to show per page.                                          |
+| loop           | Boolean  | true        | If `true`, the carousel will loop back to the beginning after the last slide.|
+| autoplay       | Number   | 0           | Time in milliseconds for automatic slide transition. 0 means no autoplay.   |
+| duration       | Number   | 200         | Duration of the slide transition in milliseconds.                           |
+| easing         | String   | 'ease-out'  | Easing function for the slide transition.                                   |
+| startIndex     | Number   | 0           | Index of the initial slide to display.                                      |
+| draggable      | Boolean  | true        | If `true`, the slides can be dragged to change slides.                      |
+| multipleDrag   | Boolean  | true        | If `true`, allows multiple slides to be dragged at once.                    |
+| threshold      | Number   | 20          | Threshold in pixels to trigger a slide change when dragging.                |
+| rtl            | Boolean  | false       | If `true`, the carousel will display in right-to-left mode.                 |
+| dots           | Boolean  | false       | If `true`, navigation dots will be displayed for the carousel.              |
