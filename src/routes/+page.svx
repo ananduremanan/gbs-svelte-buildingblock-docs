@@ -14,8 +14,13 @@ LatestVersion : <span class="font-bold">{latestVersion}<span>
 
 Svelte Version of GBS Building Block. Version. This Documentation describes how to install and use `gbs-svelte-block` component library.
 
+### Installation
 
-#### Additional Installation Steps.
+```bash
+    npm i @grampro/svelte-block
+```
+
+### Additional Installation Steps.
 
 `@grampro/svelte-block` is heavily relies on tailwind for styling, so you need to setup tailwind in your project. Installation for svelte tailwind can be found in [Here](https://tailwindcss.com/docs/guides/sveltekit).
 
@@ -25,10 +30,17 @@ or simply install the bootstrapped project(recommended) with
     npx create-svelte-gbs-app@latest your_project_name
 ```
 
-### Installation
+In case of manual installation of tailwindcss you need to update your `tailwind.config.js` as follows
 
 ```bash
-    npm i @grampro/svelte-block
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./src/**/*.{html,js,svelte,ts}', './node_modules/@grampro/**/*.{html,js,svelte,ts}'],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
 ```
 
 ### NPM Registry
