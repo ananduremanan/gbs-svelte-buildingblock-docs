@@ -1,6 +1,7 @@
 <script>
     import ExperimentalHeader from './ExperimentalHeader.svelte'
     import Carousal from './Carousal.svelte'
+	import MakeSound from './MakeSound.svelte'
 </script>
 
 <ExperimentalHeader />
@@ -20,7 +21,9 @@ Carousal can be used to slide through multiple elements and images
 
 <Carousal />
 
-#### Code
+Image Courtsey [Sony](https://www.sony.net/Products/di_photo-gallery/camera/ILCE-9/?select=camera&body=ilc&system=APS-C,35mmFullFrame)
+
+#### Usage
 
 ```svelte
 <script lang="ts">
@@ -59,3 +62,25 @@ Carousal can be used to slide through multiple elements and images
 | threshold      | Number   | 20          | Threshold in pixels to trigger a slide change when dragging.                |
 | rtl            | Boolean  | false       | If `true`, the carousel will display in right-to-left mode.                 |
 | dots           | Boolean  | false       | If `true`, navigation dots will be displayed for the carousel.              |
+
+
+#### MakeSound
+
+Why limited to visual aesthetics when you can let your users hear the chnages as well?  MakeSound can make some noise
+in your UI.
+
+<MakeSound />
+
+#### Usage
+
+```svelte
+<script lang="ts">
+  import { MakeSound } from "@grampro/svelte-block/makesound";
+  import Button from "@grampro/svelte-block/Button.svelte";
+
+  const playClickSound = MakeSound("/sounds/click.mp3");
+</script>
+
+<Button on:click={playClickSound}>Click to Make Sound</Button>
+
+```
