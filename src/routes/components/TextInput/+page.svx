@@ -1,0 +1,58 @@
+<script>
+	import TextInput from './TextInput.svelte'
+</script>
+
+### TextInput
+
+A versatile component for text input with customizable properties
+
++page.svelte
+
+```svelte
+<script lang="ts">
+	import TextInput from '$lib/textinput/TextInput.svelte';
+</script>
+
+<div class="min-h-screen flex items-center justify-center">
+	<TextInput />
+</div>
+
+```
+
+#### Sample
+
+<TextInput />
+
+#### OTP Field
+
+TextInput component supports OTPField input by passing the prop OTPFeild
+
+<TextInput OTPFeildClient={true} />
+
+Example Code
+
+```svelte
+<script lang="ts">
+	import TextInput from '$lib/textinput/TextInput.svelte';
+
+	let OTPValue: any;
+</script>
+
+<div class="min-h-screen flex items-center justify-center">
+	<TextInput OTPFeild OTPLength={4} bind:OTPValue  />
+</div>
+
+```
+
+#### Props
+
+| Property     | Type    | Description                                                                   |
+| ------------ | ------- | ------------------------------------------------------------------------------|
+| type         | String  | The type of input field (e.g., "text", "number", "email").                    |
+| placeholder  | String  | The placeholder text displayed when no value is entered.                      |
+| pattern      | String  | A regular expression pattern that the input's value must match.               |
+| id           | String  | The unique identifier for the input field.                                    |
+| value        | Any     | The current value of the input field.                                         |
+| OTPField     | Boolean | Indicates whether the input field is an OTP (One Time Password) entry system. |
+| OTPValue     | String  | The value of the OTP (One Time Password) input field entry.                   |
+| OTPLength    | Number  | The length of the OTP (One Time Password), usually 4 or 6 digits.             |

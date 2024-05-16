@@ -103,6 +103,11 @@ hr {
   animation: none;
 }
 
+.otp-container{
+  display: flex;
+  gap: 10px !important;
+}
+
 @keyframes rotate {
   from {
     transform: rotate(0);
