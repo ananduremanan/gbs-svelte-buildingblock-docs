@@ -2,6 +2,7 @@
   import { DarkMode } from "flowbite-svelte";
   import { Menu } from "lucide-svelte";
   import { createEventDispatcher } from "svelte";
+  import Search from "./Search.svelte";
 
   const dispatch = createEventDispatcher();
 </script>
@@ -16,6 +17,7 @@
       >GramLib</span
     >
     <span class="flex items-center">
+      <Search />
       <DarkMode class="text-white hover:bg-blue-800" />
       <a
         href="https://github.com/ananduremanan/svelte-docs-template"

@@ -29,6 +29,8 @@
   "type": "module",
   "dependencies": {
     "@grampro/svelte-block": "^0.0.2-6.3-beta",
+    "flexsearch": "^0.7.43",
+    "gray-matter": "^4.0.3",
     "jspdf-autotable": "^3.8.2",
     "lucide-svelte": "^0.378.0",
     "tailwind-merge": "^2.3.0",
