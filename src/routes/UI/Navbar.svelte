@@ -14,7 +14,14 @@
         on:click={() => {
           dispatch("mobile_menu_clicked", { value: true });
         }}><Menu size="20" class="md:hidden" /></button
-      >GramLib</span
+      >
+      <div class="flex items-center gap-1">
+        <img src="/logo.webp" alt="" class="w-10" />
+        <div>
+          <div>GramLib</div>
+          <div class="logo-tagline -mt-3">Svelete Component Library</div>
+        </div>
+      </div></span
     >
     <span class="flex items-center">
       <Search />
@@ -26,3 +33,9 @@
     </span>
   </div>
 </nav>
+
+<style>
+  .logo-tagline {
+    font-size: 8px;
+  }
+</style>
