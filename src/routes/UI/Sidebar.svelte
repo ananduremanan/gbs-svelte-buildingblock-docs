@@ -2,6 +2,8 @@
   import { page } from "$app/stores";
   import { onMount } from "svelte";
 
+  export let showSideBar: boolean;
+
   let menuItemsArray: any[] = [];
 
   async function fetchData() {
@@ -21,7 +23,7 @@
 </script>
 
 <div
-  class="h-full border-r overflow-y-auto bg-gray-100 dark:bg-gray-800 dark:text-white p-4 w-1/4 hidden md:block"
+  class={`h-full border-r overflow-y-auto bg-gray-100 dark:bg-gray-800 dark:text-white p-4  ${!showSideBar ? "hidden w-1/4" : "block w-56"} md:block`}
 >
   <ul>
     <li
@@ -33,7 +35,13 @@
       <li
         class={`mt-2 py-1 ${current_url === menu ? "bg-blue-200 text-blue-500 rounded-lg dark:bg-blue-300" : ""}`}
       >
-        <a href={`/components/${menu}`} class="block p-1">{menu}</a>
+        <a
+          href={`/components/${menu}`}
+          class="block p-1"
+          on:click={() => {
+            showSideBar = !showSideBar;
+          }}>{menu}</a
+        >
       </li>
     {/each}
     <li
