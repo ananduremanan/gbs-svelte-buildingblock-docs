@@ -15,14 +15,16 @@
           dispatch("mobile_menu_clicked", { value: true });
         }}><Menu size="20" class="md:hidden" /></button
       >
-      <div class="flex items-center gap-1">
-        <img src="/logo.webp" alt="" class="w-10" />
-        <div>
-          <div>GramLib</div>
-          <div class="logo-tagline -mt-3">Svelete Component Library</div>
+      <a href="/">
+        <div class="flex items-center gap-1">
+          <img src="/logo.webp" alt="" class="w-10" />
+          <div>
+            <div>GramLib</div>
+            <div class="logo-tagline -mt-3">Svelete Component Library</div>
+          </div>
         </div>
-      </div></span
-    >
+      </a>
+    </span>
     <span class="flex items-center">
       <Search />
       <DarkMode class="text-white hover:bg-blue-800" />

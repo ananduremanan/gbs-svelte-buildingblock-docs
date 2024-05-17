@@ -29,7 +29,13 @@
     <li
       class={`mt-2 py-1 ${current_url === "/" ? "bg-blue-200 rounded-lg text-blue-500 dark:bg-blue-300" : ""}`}
     >
-      <a href="/" class="block p-1">Introduction</a>
+      <a
+        href="/"
+        class="block p-1"
+        on:click={() => {
+          showSideBar = !showSideBar;
+        }}>Introduction</a
+      >
     </li>
     {#each menuItemsArray as menu}
       <li
