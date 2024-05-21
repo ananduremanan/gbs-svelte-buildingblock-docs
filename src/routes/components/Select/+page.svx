@@ -45,9 +45,13 @@ export let countries = [
 
 #### Props
 
-| Property    | Type    | Description                                                           |
-| ----------- | ------- | --------------------------------------------------------------------- |
-| placeholder | String  | The placeholder text displayed when no item is selected.              |
-| items       | Array   | An array of items to populate the select dropdown.                    |
-| selected    | Any     | The currently selected item.                                          |
-| lazy        | Boolean | If set to `true`, the select component enables lazy loading of items. |
+| Property       | Type    | Description                                                           |
+| -----------    | ------- | --------------------------------------------------------------------- |
+| placeholder    | String  | The placeholder text displayed when no item is selected.              |
+| items          | Array   | An array of items to populate the select dropdown.                    |
+| selected       | Any     | The currently selected item.                                          |
+| lazy           | Boolean | If set to `true`, the select component enables lazy loading of items. |
+| showSearch     | Boolean | Toggles the searchbar inside Select "on" and "off					   |
+| searchboxClass | String  | Style class for searchbox 											   |
+| popUpClass 	 | String  | Style for select dropdown											   |
+| itemClass 	 | String  | Style for select items												   |
