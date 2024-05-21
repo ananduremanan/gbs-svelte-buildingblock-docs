@@ -10,7 +10,7 @@
 
 ## Introduction
 
-LatestVersion : <span class="font-bold">{latestVersion}<span>
+LatestVersion : <span class="font-bold">{latestVersion} - (Beta)<span>
 
 Svelte Version of GBS Building Block. Version. This Documentation describes how to install and use `@grampro/svelte-block` component library.
 
