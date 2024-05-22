@@ -1,0 +1,81 @@
+<script>
+    import Toast from './Toast.svelte'
+</script>
+
+### Toast
+
+Toast notifications are brief, non-intrusive alerts that provide feedback to users about the status of an action or display messages that require minimal user interaction. They typically appear in a corner of the interface and disappear automatically after a short duration.
+
++layout.svelte
+
+```svelte
+<script>
+	import Toasts from '@grampro/svelte-block/Toasts.svelte';
+	import './app.css';
+</script>
+
+<Toasts />
+<div class="flex flex-col">
+	<slot />
+</div>
+```
+
++page.svelte
+
+```svelte
+<script lang="ts">
+  import { addToast } from "@grampro/svelte-block/addToast";
+  import Button from "@grampro/svelte-block/Button.svelte";
+
+  let toastSettings = {
+    message: "Anakkin: I kill em!",
+    type: "success",
+    dismissible: false,
+    timeout: 2000,
+    position: "top-center",
+  };
+</script>
+
+<Button on:click={() => addToast(toastSettings)}>Click To Show Toast</Button>
+
+```
+
+#### Sample
+
+<Toast />
+
+```svelte
+<script lang="ts">
+  import { addToast } from "@grampro/svelte-block/addToast";
+  import Button from "@grampro/svelte-block/Button.svelte";
+
+  let toastSettings = {
+    message: "Your Phone Linging!",
+    type: "success",
+    dismissible: false,
+    timeout: 2000,
+    position: "top-center",
+  };
+</script>
+
+<div class="flex gap-2">
+  <Button on:click={() => addToast(toastSettings)}
+    >Click To Show Success Toast</Button
+  >
+  <Button on:click={() => addToast({ ...toastSettings, type: "error" })}
+    >Click To Show Error Toast</Button
+  >
+  <Button on:click={() => addToast({ ...toastSettings, type: "info" })}
+    >Click To Show Info Toast</Button
+  >
+</div>
+```
+
+#### Options
+
+| Property    | Type    | Description                                                                                 |
+| ----------- | ------- | ------------------------------------------------------------------------------------------- |
+| message     | String  | The message displayed in the toast notification.                                            |
+| type        | String  | The type of the toast, indicating its purpose (e.g., "success", "error", "info").           |
+| dismissible | Boolean | Indicates whether the toast can be dismissed by the user.                                   |
+| timeout     | Number  | The duration (in milliseconds) for which the toast will be displayed before auto-dismissal. |

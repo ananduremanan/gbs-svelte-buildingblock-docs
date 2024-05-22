@@ -6,6 +6,7 @@
   import { page } from "$app/stores";
   import { ChevronLeft, ChevronRight } from "lucide-svelte";
   import { fetchData, getNextPage, getPreviousPage } from "./utils/menuutils";
+  import Toasts from "@grampro/svelte-block/Toasts.svelte";
 
   let showSideBar = false;
   let menuItemsArray: any[] = [];
@@ -28,6 +29,7 @@
   afterUpdate(init);
 </script>
 
+<Toasts />
 <div class="flex flex-col h-screen">
   <Navbar
     on:mobile_menu_clicked={() => {
