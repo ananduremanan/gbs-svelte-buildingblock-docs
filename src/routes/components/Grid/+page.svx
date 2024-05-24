@@ -106,7 +106,11 @@ Grids are powerful tools for organizing, visualizing, and interacting with tabul
 ```
 #### It's Beta Time
 
-Grid rows are now editable!!! (Check the latest beta version [Here](https://www.npmjs.com/package/@grampro/svelte-block/v/0.0.29-1-beta?activeTab=versions))
+Beta Features for grid(May have bugs)(Check the latest beta version [Here](https://www.npmjs.com/package/@grampro/svelte-block/v/0.0.29-1-beta?activeTab=versions))
+
+#### Grid rows are now editable!!!
+
+Individual Grid rows can be edit now.
 
 Example
 
@@ -134,3 +138,45 @@ Example
 </div>
 
 ```
+
+#### Grid can now support different page options for pdf export
+
+Page options for pdf export lets you change the default settings(layout: 'portrait', paperSize: 'a4') for pdf pages.
+
+Example
+
+```svelte
+<script>
+	import Grid from '$lib/grid/Grid2.0.svelte';
+	import { dataSource } from '$lib/dataSource';
+
+	const columns = [
+		{ field: 'OrderID', width: '200', textAlign: 'Right' },
+		{ field: 'ShipCountry', width: '200' },
+		{ field: 'ShipAddress', width: '150' },
+		{ field: 'ShipName', width: '150' },
+		{ field: 'ShipCity', width: '150' },
+		{ field: 'ShipRegion', width: '150' },
+		{ field: 'ShipPostalCode', width: '150' },
+		{ field: 'OrderDate', width: '150' },
+		{ field: 'Verified', width: '150' }
+	];
+</script>
+
+<div class="mx-8 mt-8">
+	<Grid
+		{columns}
+		{dataSource}
+		pageSettings={{ pageNumber: 10 }}
+		enableSearch
+		enablePdfExport
+		pdfOptions={{ layout: 'portrait', paperSize: 'a3' }}
+	/>
+</div>
+```
+
+pdfOptions:
+
+- layout : "portrait" | "landscape"
+- paperSize: 'a3' | 'a4' | 'letter' | 'legal' | 'tabloid' | 'statement' | 'executive'
+
