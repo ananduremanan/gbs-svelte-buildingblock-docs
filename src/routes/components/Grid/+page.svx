@@ -104,3 +104,33 @@ Grids are powerful tools for organizing, visualizing, and interacting with tabul
     { field: "place", headerText: "Place", width: "200" },
   ];
 ```
+#### It's Beta Time
+
+Grid rows are now editable!!! (Check the beta version [Here](https://www.npmjs.com/package/@grampro/svelte-block/v/0.0.29-1-beta))
+
+Example
+
+```svelte
+<script>
+	import Grid from '$lib/grid/Grid2.0.svelte';
+	import { dataSource } from '$lib/dataSource';
+
+	const columns = [
+		{ field: 'OrderID', width: '200', textAlign: 'Right' },
+		{ field: 'CustomerID', width: '100', editable: true }, // Add editable to the columns you want to edit
+		{ field: 'EmployeeID', width: '100', textAlign: 'Right' },
+		{
+			field: 'Freight',
+			headerText: 'Frieght',
+			width: '200'
+		},
+		{ field: 'ShipCountry', width: '200' },
+		{ field: 'ShipAddress', width: '150' }
+	];
+</script>
+
+<div class="mx-8 mt-8">
+	<Grid {columns} {dataSource} pageSettings={{ pageNumber: 10 }} enableSearch isEditable />
+</div>
+
+```
