@@ -106,7 +106,7 @@ Grids are powerful tools for organizing, visualizing, and interacting with tabul
 ```
 #### It's Beta Time
 
-Grid rows are now editable!!! (Check the beta version [Here](https://www.npmjs.com/package/@grampro/svelte-block/v/0.0.29-1-beta))
+Grid rows are now editable!!! (Check the latest beta version [Here](https://www.npmjs.com/package/@grampro/svelte-block/v/0.0.29-1-beta?activeTab=versions))
 
 Example
 
