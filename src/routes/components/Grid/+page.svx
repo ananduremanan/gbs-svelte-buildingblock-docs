@@ -106,38 +106,47 @@ Grids are powerful tools for organizing, visualizing, and interacting with tabul
 ```
 #### It's Beta Time
 
-Beta Features for grid(May have bugs)(Check the latest beta version [Here](https://www.npmjs.com/package/@grampro/svelte-block/v/0.0.29-1-beta?activeTab=versions))
+Beta Features for grid(May have bugs)(Check the latest beta version [Here](https://www.npmjs.com/package/@grampro/svelte-block/v/0.0.29-4-beta?activeTab=versions))
 
 #### Grid rows are now editable!!!
 
-Individual Grid rows can be edit now.
+Grid rows can be edit now (Only Add New Row Feature is Implemented).
 
 Example
 
 ```svelte
 <script>
-	import Grid from '$lib/grid/Grid2.0.svelte';
+	import Grid from '@grampro/svelte-block/Grid.svelte';
 	import { dataSource } from '$lib/dataSource';
 
 	const columns = [
-		{ field: 'OrderID', width: '200', textAlign: 'Right' },
-		{ field: 'CustomerID', width: '100', editable: true }, // Add editable to the columns you want to edit
-		{ field: 'EmployeeID', width: '100', textAlign: 'Right' },
-		{
-			field: 'Freight',
-			headerText: 'Frieght',
-			width: '200'
-		},
-		{ field: 'ShipCountry', width: '200' },
-		{ field: 'ShipAddress', width: '150' }
+		{ field: 'OrderID', textAlign: 'Right', type: 'number', isPrimary: true },
+		{ field: 'ShipCountry', editable: true },
+		{ field: 'ShipAddress' },
+		{ field: 'ShipName' },
+		{ field: 'ShipCity' },
+		{ field: 'ShipRegion' },
+		{ field: 'ShipPostalCode' },
+		{ field: 'OrderDate', type: 'date' },
+		{ field: 'Verified', type: 'boolean' }
 	];
 </script>
 
-<div class="mx-8 mt-8">
-	<Grid {columns} {dataSource} pageSettings={{ pageNumber: 10 }} enableSearch isEditable />
+<div class="mx-8 mt-8 max-sm:mx-4">
+	<Grid
+		{columns}
+		{dataSource}
+		pageSettings={{ pageNumber: 10 }}
+		enableSearch
+		enablePdfExport
+		enableExcelExport
+		enableEditingBox
+	/>
 </div>
 
 ```
+
+Editing Grid can be tricky sometimes when you handle different types on inputs, in such cases add type key in the columns array.
 
 #### Grid can now support different page options for pdf export
 
