@@ -29,7 +29,7 @@
   afterUpdate(init);
 </script>
 
-<Toasts />
+<Toasts position="bottom-0 right-0" />
 <div class="flex flex-col h-screen">
   <Navbar
     on:mobile_menu_clicked={() => {

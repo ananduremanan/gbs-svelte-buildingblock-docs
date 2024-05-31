@@ -28,7 +28,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@grampro/svelte-block": "^0.0.28",
+    "@grampro/svelte-block": "^0.0.31-beta",
     "flexsearch": "^0.7.43",
     "gray-matter": "^4.0.3",
     "jspdf-autotable": "^3.8.2",

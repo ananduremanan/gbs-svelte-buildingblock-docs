@@ -79,3 +79,38 @@ Toast notifications are brief, non-intrusive alerts that provide feedback to use
 | type        | String  | The type of the toast, indicating its purpose (e.g., "success", "error", "info").           |
 | dismissible | Boolean | Indicates whether the toast can be dismissed by the user.                                   |
 | timeout     | Number  | The duration (in milliseconds) for which the toast will be displayed before auto-dismissal. |
+
+
+#### Specifying Toast Position(Beta)
+
+You can specify Toast position as below.
+
+```svelte
+<script>
+	import Toasts from '@grampro/svelte-block/Toasts.svelte';
+	import './app.css';
+</script>
+
+<Toasts position="top-0 left-0" />
+<div class="flex flex-col">
+	<slot />
+</div>
+```
+
+#### Passing Custom Component(Beta)
+
+```svelte
+<script>
+	import { addToast } from '@grampro/svelte-block/addToast';
+	import Action from '$lib/template/Action.svelte';
+
+  let toastSettings = {
+		type: 'custom',
+		dismissible: false,
+		timeout: 3000,
+		component: Action
+	};
+</script>
+
+<Button class="bg-blue-900 rounded-none" on:click={() => addToast(toastSettings)}>Show Preview</Button>
+```
