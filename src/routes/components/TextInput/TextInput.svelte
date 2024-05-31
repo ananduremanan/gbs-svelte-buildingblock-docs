@@ -4,4 +4,4 @@
   export let OTPFeildClient: boolean = false;
 </script>
 
-<TextInput OTPFeild={OTPFeildClient} />
+<TextInput OTPFeild={OTPFeildClient} placeholder="Enter Something" />
