@@ -7,7 +7,7 @@
   const dispatch = createEventDispatcher();
 </script>
 
-<nav class="bg-blue-600 text-white p-4">
+<nav class="bg-white px-4 py-1 border-b dark:bg-black dark:text-white">
   <div class="container mx-auto flex justify-between items-center">
     <span class="text-lg font-semibold flex items-center gap-2"
       ><button
@@ -17,7 +17,6 @@
       >
       <a href="/">
         <div class="flex items-center gap-1">
-          <img src="/logo.webp" alt="" class="w-10" />
           <div>
             <div>GramLib</div>
             <div class="logo-tagline -mt-3">Svelete Component Library</div>
@@ -27,7 +26,7 @@
     </span>
     <span class="flex items-center">
       <Search />
-      <DarkMode class="text-white hover:bg-blue-800" />
+      <DarkMode class="text-dark dark:text-white" />
       <a
         href="https://github.com/ananduremanan/svelte-docs-template"
         target="_blank">Github</a

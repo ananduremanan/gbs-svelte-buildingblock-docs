@@ -76,7 +76,7 @@
     bind:value={searchInput}
     placeholder="Search..."
     on:input={handleOnInput}
-    class="text-black outline-none p-1 px-3 rounded-xl border-0"
+    class="text-black outline-none p-1 px-3 rounded-xl border"
   />
   {#if results.length > 0}
     <div class="absolute glass text-black w-auto px-4">
