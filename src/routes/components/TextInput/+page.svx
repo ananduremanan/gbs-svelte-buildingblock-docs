@@ -11,10 +11,12 @@ A versatile component for text input with customizable properties
 ```svelte
 <script lang="ts">
 	import TextInput from '@grampro/svelte-block/TextInput.svelte';
+
+	let textValue = ""
 </script>
 
 <div class="min-h-screen flex items-center justify-center">
-	<TextInput />
+	<TextInput bind:value={textValue} />
 </div>
 
 ```

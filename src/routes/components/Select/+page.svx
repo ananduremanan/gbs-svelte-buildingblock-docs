@@ -33,7 +33,7 @@ export let countries = [
 </script>
 
 <div>
-	<Select items={countries} bind:value={selected} />
+	<Select items={countries} bind:selected={selected} />
 </div>
 ```
 
