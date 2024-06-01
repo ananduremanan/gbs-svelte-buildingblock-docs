@@ -16,8 +16,6 @@
             heading.textContent.replace(/\s+/g, "-").toLowerCase(),
           tag: heading.tagName.toLowerCase(),
         }));
-
-        console.log(headings);
       }
     }
   }
