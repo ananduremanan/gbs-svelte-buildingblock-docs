@@ -21,7 +21,7 @@
   }
 </script>
 
-<div class="hidden md:block md:w-80 px-10 py-4">
+<div class="hidden lg:block md:w-52 py-4 dark:text-white">
   <div class="font-bold">On This Page</div>
   <ul class="ml-2 mt-2 text-sm">
     {#each headings as heading}

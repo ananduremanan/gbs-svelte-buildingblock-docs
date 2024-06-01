@@ -27,7 +27,7 @@
 >
   <ul>
     <li
-      class={`py-1 ${current_url === "/" ? "bg-blue-200 rounded-lg text-blue-500 dark:bg-blue-300" : ""}`}
+      class={`py-1 ${current_url === "/" ? "bg-blue-100 rounded-lg text-blue-500 dark:bg-blue-100" : ""}`}
     >
       <a
         href="/"
@@ -39,7 +39,7 @@
     </li>
     {#each menuItemsArray as menu}
       <li
-        class={` py-1 ${current_url === menu ? "bg-blue-200 text-blue-500 rounded-lg dark:bg-blue-300" : ""}`}
+        class={` py-1 ${current_url === menu ? "bg-blue-100 text-blue-500 rounded-lg dark:bg-blue-100" : ""}`}
       >
         <a
           data-sveltekit-preload-data="tap"
@@ -53,7 +53,7 @@
       </li>
     {/each}
     <li
-      class={` py-1 ${current_url === "Experimental" ? "bg-blue-200 rounded-lg text-blue-500 dark:bg-blue-300" : ""}`}
+      class={` py-1 ${current_url === "Experimental" ? "bg-blue-100 rounded-lg text-blue-500 dark:bg-blue-100" : ""}`}
     >
       <a
         href="/Experimental"

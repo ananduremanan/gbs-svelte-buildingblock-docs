@@ -58,7 +58,7 @@
       toggleSidebar();
     }}
   />
-  <div class="flex flex-1 overflow-hidden">
+  <div class="flex flex-1 overflow-hidden lg:px-5">
     <Sidebar bind:showSideBar />
     <div class="p-1 flex-1 overflow-auto content-container">
       <article
