@@ -7,22 +7,44 @@
   import { ChevronLeft, ChevronRight } from "lucide-svelte";
   import { fetchData, getNextPage, getPreviousPage } from "./utils/menuutils";
   import Toasts from "@grampro/svelte-block/Toasts.svelte";
+  import TableofContent from "./UI/TableofContent.svelte";
 
   let showSideBar = false;
   let menuItemsArray: any[] = [];
   let current_url = "/";
   let nextPage = "";
   let previousPage = "";
+  let contentHtml: any;
 
   const toggleSidebar = () => {
     showSideBar = !showSideBar;
   };
+
+  function assignIdsToHeadings(article: any) {
+    const headings = article.querySelectorAll("h3, h4");
+    headings.forEach((heading: any) => {
+      if (!heading.id) {
+        const id = heading.textContent
+          .trim()
+          .toLowerCase()
+          .replace(/\s+/g, "-");
+        heading.id = id;
+      }
+    });
+  }
 
   async function init() {
     current_url = $page.url.pathname.split("/").filter(Boolean).pop() || "/";
     menuItemsArray = await fetchData();
     nextPage = getNextPage(current_url, menuItemsArray);
     previousPage = getPreviousPage(current_url, menuItemsArray);
+    if (typeof document !== "undefined") {
+      const article = document.querySelector("article");
+      if (article) {
+        contentHtml = article.innerHTML;
+        assignIdsToHeadings(article);
+      }
+    }
   }
 
   onMount(init);
@@ -38,7 +60,7 @@
   />
   <div class="flex flex-1 overflow-hidden">
     <Sidebar bind:showSideBar />
-    <div class="p-1 flex-1 overflow-auto">
+    <div class="p-1 flex-1 overflow-auto content-container">
       <article
         class="prose lg:prose-xl dark:prose-invert px-4 md:text-base sx-content dark:prose-pre:bg-gray-700 mb-8"
       >
@@ -62,5 +84,6 @@
         </div>
       </article>
     </div>
+    <TableofContent {contentHtml} />
   </div>
 </div>

@@ -42,10 +42,12 @@
         class={` py-1 ${current_url === menu ? "bg-blue-200 text-blue-500 rounded-lg dark:bg-blue-300" : ""}`}
       >
         <a
+          data-sveltekit-preload-data="tap"
           href={`/components/${menu}`}
           class="block p-1"
           on:click={() => {
             showSideBar = !showSideBar;
+            window.scrollTo({ top: 0, behavior: "smooth" });
           }}>{menu}</a
         >
       </li>
