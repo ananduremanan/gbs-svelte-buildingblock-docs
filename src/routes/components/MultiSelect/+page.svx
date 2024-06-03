@@ -27,7 +27,7 @@ export let countries = [
 ```svelte
 <script lang="ts">
 	import { countries } from '$lib/countries';
-	import Select from '@grampro/svelte-block/MultiSelect.svelte';
+	import { MultiSelect } from '@grampro/svelte-block';
 
 	let selected: any = undefined;
 </script>

@@ -29,6 +29,7 @@ article {
 
 .content-container {
   scrollbar-width: none;
+  padding-bottom: 4rem;
 }
 
 .content-container::-webkit-scrollbar {

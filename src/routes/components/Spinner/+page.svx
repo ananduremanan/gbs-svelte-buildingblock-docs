@@ -1,0 +1,49 @@
+<script>
+	import Spinner from './Spinner.svelte'
+</script>
+
+### Spinner
+
+The Spinner component provides a visual indication that an operation is in progress, enhancing user experience by signaling loading states. It's customizable and easy to integrate into any Svelte application for seamless feedback.
+
++page.svelte
+
+```svelte
+<script lang="ts">
+	import {Spinner} from '@grampro/svelte-block';
+</script>
+
+<Spinner />
+```
+
+#### Sample
+
+<Spinner />
+
+Example Code
+
+```svelte
+<script>
+  import { Spinner } from "@grampro/svelte-block";
+</script>
+
+<div class="flex gap-4">
+  <Spinner />
+  <Spinner type="stroke" />
+  <Spinner type="circle-bg" />
+  <Spinner type="dot" size="h-4 w-4" />
+</div>
+
+```
+
+#### Props
+
+| Property       | Type    | Description                                                                                   |
+| -------------- | ------- | --------------------------------------------------------------------------------------------- |
+| size           | String  | Specifies the size of the spinner, using Tailwind CSS classes (default: 'h-10 w-10').         |
+| color          | String  | Defines the border color for the spinner's main element, using Tailwind CSS classes.          |
+| fullCircleColor| String  | Sets the color for the full circle spinner variation, using Tailwind CSS classes.             |
+| dotColor       | String  | Determines the color of the dots for the dot spinner variation, using Tailwind CSS classes.   |
+| duration       | String  | Specifies the duration of the animation, using Tailwind CSS classes (default: 'duration-500').|
+| type           | String  | Indicates the type of spinner to display ('circle', 'circle-bg', 'dot', 'stroke').            |
+| strokeColor    | String  | Defines the color of the stroke for the stroke spinner variation, using Tailwind CSS classes. |
