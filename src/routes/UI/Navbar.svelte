@@ -22,7 +22,7 @@
           dispatch("mobile_menu_clicked", { value: true });
         }}><Menu size="20" class="md:hidden" /></button
       >
-      <a href="/">
+      <a href="https://gramlib.netlify.app">
         <div class="flex items-center gap-1 justify-center">
           <div>
             <div>GramLib</div>

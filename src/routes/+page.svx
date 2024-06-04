@@ -1,15 +1,12 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { getLatestVersion } from "$lib";
-  import HeaderImage from './UI/HeaderImage.svelte'
 
   let latestVersion = "";
   onMount(async () => {
     latestVersion = await getLatestVersion();
   });
 </script>
-
-<HeaderImage />
 
 ## Introduction
 
