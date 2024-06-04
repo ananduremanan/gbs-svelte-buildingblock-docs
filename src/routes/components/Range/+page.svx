@@ -1,0 +1,53 @@
+<script>
+	import Range from './Range.svelte'
+</script>
+
+### Range
+
+The Range component is a customizable range slider with optional labeled values for precise control. It supports dynamic positioning of labels based on their values, ensuring clear and accessible interaction.
+
+#### Usage
+
+```svelte
+<script lang="ts">
+  import { Range } from "@grampro/svelte-block";
+
+  let rangeValue: any = undefined;
+</script>
+
+<div class="flex flex-col gap-4">
+  <Range />
+  <Range
+    labelledRange
+    labelledRangeValues={[
+      { text: "₹100", value: 100 },
+      { text: "₹500", value: 500 },
+      { text: "₹1000", value: 1000 },
+      { text: "₹1500", value: 1500 },
+    ]}
+    min="100"
+    max="1500"
+    bind:value={rangeValue}
+  />
+  <div class="mt-6">
+    RangeValue is: {rangeValue ? rangeValue : "Click On Range"}
+  </div>
+</div>
+
+```
+
+#### Sample
+
+<Range />
+
+#### Props
+
+| Property                | Type       | Default                                                                        | Description                                                                                                     |
+| ----------------------- | ---------- | ------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| min                   | string   | '0'                                                                          | The minimum value of the range slider.                                                                          |
+| max                   | string   | '11'                                                                       | The maximum value of the range slider.                                                                          |
+| value                 | any      | undefined                                                                    | The current value of the range slider.                                                                          |
+| labelledRange         | boolean  | false                                                                        | If `true`, the range slider will display labels for specific values.                                            |
+| labelledRangeValues   | any[]    | []                                                                          | An array of objects containing `text` and `value` for each label to display along the range slider.             |
+| rangeClass            | string   | 'w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700' | CSS classes to apply to the range slider for styling.                                                           |
+| labelledRangeTextClass| string   | 'text-sm text-gray-500 dark:text-gray-400 absolute -bottom-6'                | CSS classes to apply to the label text for styling.                                                             |

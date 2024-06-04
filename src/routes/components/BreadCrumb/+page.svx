@@ -1,0 +1,29 @@
+<script>
+	import { BreadCrumb } from '@grampro/svelte-block'
+</script>	
+
+### BreadCrumb(Beta)
+
+Experimental Component. Import it in your page component to show a BreadCrumb.
+
+#### Usage
+
+```svelte
+<script>
+	import { BreadCrumb } from '@grampro/svelte-block';
+</script>
+
+<BreadCrumb />
+```
+
+#### Sample
+
+<BreadCrumb />
+
+#### Props
+
+| Property                 | Type     | Default            | Description                                                                              |
+| ------------------------ | -------- | ------------------ | ---------------------------------------------------------------------------------------- |
+| textActivePathColor    | string | text-black   | CSS classes to apply to the active path segment text color.                              |
+| textInactivePathColor  | string | text-gray-500  | CSS classes to apply to the inactive path segment text color.                            |
+| hoverStyle             | string | hover:underline| CSS classes to apply for hover effects on the path segments.                             |

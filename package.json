@@ -29,7 +29,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@grampro/svelte-block": "^0.0.32-beta",
+    "@grampro/svelte-block": "^0.0.32-1-beta",
     "flexsearch": "^0.7.43",
     "gray-matter": "^4.0.3",
     "jsdom": "^24.1.0",
