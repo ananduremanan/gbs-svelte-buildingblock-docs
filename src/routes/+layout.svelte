@@ -15,6 +15,44 @@
   let nextPage = "";
   let previousPage = "";
   let contentHtml: any;
+  let packageName = "@grampro/svelte-block";
+  let latestBetaVersion: any = "";
+  let error = "";
+
+  async function getLatestBetaVersion(packageName: string) {
+    const url = `https://registry.npmjs.org/${packageName}`;
+
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(
+          `Unable to fetch package metadata: ${response.statusText}`
+        );
+      }
+
+      const packageData = await response.json();
+
+      const versions = Object.keys(packageData.versions);
+      const betaVersions = versions.filter((version) =>
+        version.includes("beta")
+      );
+
+      if (betaVersions.length === 0) {
+        error = `No beta versions found for package ${packageName}`;
+        return null;
+      }
+
+      const latestBetaVersion = betaVersions.sort((a, b) => {
+        return new Date(packageData.time[a]) > new Date(packageData.time[b])
+          ? -1
+          : 1;
+      })[0];
+
+      return latestBetaVersion;
+    } catch (err: any) {
+      error = `Error: ${err.message}`;
+    }
+  }
 
   const toggleSidebar = () => {
     showSideBar = !showSideBar;
@@ -45,6 +83,7 @@
         assignIdsToHeadings(article);
       }
     }
+    latestBetaVersion = await getLatestBetaVersion(packageName);
   }
 
   onMount(init);
@@ -53,6 +92,14 @@
 
 <Toasts position="bottom-0 right-0" />
 <div class="flex flex-col h-screen">
+  <div
+    class="w-full bg-black dark:bg-gray-700 text-white flex justify-center text-sm py-1"
+  >
+    <a
+      href="https://www.npmjs.com/package/@grampro/svelte-block?activeTab=versions"
+      >🎉{latestBetaVersion} is Live Now</a
+    >
+  </div>
   <Navbar
     on:mobile_menu_clicked={() => {
       toggleSidebar();
