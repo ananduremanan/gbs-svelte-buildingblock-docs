@@ -54,3 +54,40 @@ export function assignIdsToHeadings(article: any) {
     }
   });
 }
+
+export function addCopyButton(codeBlocks: any) {
+  codeBlocks.forEach((codeBlock: any) => {
+    const preElement = codeBlock.parentElement;
+    if (preElement && !preElement.querySelector("button.copy-button")) {
+      const copyButton = document.createElement("button");
+      copyButton.textContent = "Copy";
+      copyButton.classList.add("copy-button");
+
+      preElement.style.position = "relative";
+      preElement.appendChild(copyButton);
+
+      copyButton.style.position = "absolute";
+      copyButton.style.top = "10px";
+      copyButton.style.right = "10px";
+      copyButton.style.zIndex = "1";
+      copyButton.style.backgroundColor = "black";
+      copyButton.style.paddingLeft = "2px";
+      copyButton.style.paddingRight = "2px";
+      copyButton.style.borderRadius = "5px";
+
+      copyButton.addEventListener("click", () => {
+        navigator.clipboard
+          .writeText(codeBlock.textContent || "")
+          .then(() => {
+            copyButton.textContent = "Copied!";
+            setTimeout(() => {
+              copyButton.textContent = "Copy";
+            }, 2000);
+          })
+          .catch((err) => {
+            console.error("Failed to copy text: ", err);
+          });
+      });
+    }
+  });
+}

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { ClipboardCleanOutline } from "flowbite-svelte-icons";
   import "../app.css";
   import Navbar from "./UI/Navbar.svelte";
   import Sidebar from "./UI/Sidebar.svelte";
@@ -12,6 +13,7 @@
     getLatestVersion,
     getLatestBetaVersion,
     assignIdsToHeadings,
+    addCopyButton,
   } from "$lib";
   import * as semver from "semver";
 
@@ -33,6 +35,12 @@
     nextPage = getNextPage(current_url, menuItemsArray);
     previousPage = getPreviousPage(current_url, menuItemsArray);
     if (typeof document !== "undefined") {
+      const codeBlocks = document.querySelectorAll("pre code");
+
+      if (codeBlocks) {
+        addCopyButton(codeBlocks);
+      }
+
       const article = document.querySelector("article");
       if (article) {
         contentHtml = article.innerHTML;
