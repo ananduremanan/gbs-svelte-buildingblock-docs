@@ -1,0 +1,57 @@
+<script>
+    import Uploader from './Uploader.svelte'
+</script>   
+
+
+### Uploader(Beta)
+
+An uploader component is a user interface element designed to facilitate the process of uploading files, such as images, documents, videos, or any other type of digital content, from a user's device to a server or storage location.
++page.svelte
+
+```svelte
+<script lang="ts">
+	import { Uploader } from '@grampro/svelte-block';
+
+	let selectedFiles: any = null;
+</script>
+
+<div class="min-h-screen flex justify-center items-center">
+	<Uploader multiple accept=".png" showPreview bind:selectedFiles />
+</div>
+```
+
+#### Sample
+
+<Uploader />
+
+Example Code
+
+```svelte
+<script lang="ts">
+  import { Uploader } from "@grampro/svelte-block";
+
+  let selectedFiles: any = null;
+</script>
+
+<div class="flex flex-col gap-2">
+  <Uploader bind:selectedFiles />
+  <div class="font-bold text-sm">With Preview and allow multiple</div>
+  <Uploader accept=".png" bind:selectedFiles placeHolder="Select Images(.png)" multiple showPreview />
+</div>
+```
+
+
+#### Props
+
+| Property                   | Type        | Description                                                          |
+| -------------------------- | ----------- | -------------------------------------------------------------------- |
+| placeHolder                | string      | The placeholder text displayed when no files are selected.          |
+| uploaderClass              | string      | The CSS class applied to the uploader container.                     |
+| placeholderClass           | string      | The CSS class applied to the placeholder text.                       |
+| placeHolderContainerClass  | string      | The CSS class applied to the container of the placeholder and icon. |
+| iconColor                  | string      | The color of the upload icon.                                        |
+| showPreview                | boolean     | Controls whether file previews are displayed after selection.        |
+| selectedFiles              | FileList    | The list of files selected by the user.                              |
+| accept                     | string      | Specifies the types of files that the file input should accept.      |
+| multiple                   | boolean     | Indicates whether multiple files can be selected for upload.         |
+

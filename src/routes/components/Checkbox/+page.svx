@@ -1,0 +1,48 @@
+<script>
+    import CheckBox from './Checkbox.svelte'
+</script>   
+
+### CheckBox(Beta)
+
+A checkbox component is a user interface element commonly used in software applications and websites to allow users to make binary choices, typically between two options such as "on" or "off," "yes" or "no," or "agree" or "disagree."
+
++page.svelte
+
+```svelte
+<script lang="ts">
+    import { CheckBox } from '@grampro/svelte-block'
+
+    let checked;
+</script>
+
+<CheckBox bind:checked />
+
+```
+
+#### Sample
+
+<CheckBox />
+
+Example Code
+
+```svelte
+<script lang="ts">
+  import { CheckBox } from "@grampro/svelte-block";
+
+  let checked: boolean = false;
+</script>
+
+<div class="flex items-center gap-2">
+  <CheckBox bind:checked />
+  <span>Selected Value is: {checked} </span>
+</div>
+```
+
+#### Props
+
+| Property      | Type      | Description                                                |
+| ------------- | --------- | ---------------------------------------------------------- |
+| checked       | boolean   | Specifies whether the checkbox is checked or unchecked.    |
+| checkboxClass | string    | The CSS class applied to the checkbox element.             |
+| disabled      | boolean   | The disabled State.                                        |
+
