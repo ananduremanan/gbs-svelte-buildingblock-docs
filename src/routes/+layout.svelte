@@ -59,6 +59,7 @@
     class="w-full bg-black dark:bg-gray-700 text-white flex justify-center text-sm py-1 relative"
   >
     <a
+      target="_blank"
       href="https://www.npmjs.com/package/@grampro/svelte-block?activeTab=versions"
       >🎉{latestBetaVersion} is Live Now
       <span
