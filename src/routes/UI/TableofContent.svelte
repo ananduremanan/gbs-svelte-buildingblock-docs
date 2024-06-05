@@ -1,10 +1,12 @@
 <script lang="ts">
-  import { onMount } from "svelte";
+  import { page } from "$app/stores";
 
   export let contentHtml;
 
   let headings: any[] = [];
-  let path: any;
+  let path: string = "";
+
+  $: path = $page.url.pathname;
 
   $: {
     if (contentHtml) {
@@ -22,10 +24,6 @@
       }
     }
   }
-
-  onMount(() => {
-    path = window.location.pathname;
-  });
 </script>
 
 <div class="hidden lg:block md:w-52 py-4 dark:text-white">
