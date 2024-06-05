@@ -10,7 +10,7 @@ Grids are powerful tools for organizing, visualizing, and interacting with tabul
 ```svelte
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import Grid from '@grampro/svelte-block/Grid.svelte';
+	import { Grid } from '@grampro/svelte-block';
 	import ImageAction from '$lib/ImageAction.svelte';
 
 	const gitDataColumns: any[] = [
@@ -116,7 +116,7 @@ Example
 
 ```svelte
 <script>
-	import Grid from '@grampro/svelte-block/Grid.svelte';
+	import { Grid } from '@grampro/svelte-block';
 	import { dataSource } from '$lib/dataSource';
 
 	const columns = [

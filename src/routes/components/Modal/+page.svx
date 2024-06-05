@@ -10,8 +10,8 @@ The modal component is a versatile UI element commonly used to display informati
 
 ```svelte
 <script lang="ts">
-	import Button from "@grampro/svelte-block/Button.svelte";
-	import Modal from "@grampro/svelte-block/Modal.svelte";
+	import { Button } from "@grampro/svelte-block";
+	import { Modal } from "@grampro/svelte-block";
 
 	let showModal = false;
 </script>

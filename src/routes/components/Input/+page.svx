@@ -2,21 +2,21 @@
 	import TextInput from './TextInput.svelte'
 </script>
 
-### TextInput
+### Input
 
-A versatile component for text input with customizable properties
+A versatile component for various Inputs with customizable properties
 
 +page.svelte
 
 ```svelte
 <script lang="ts">
-	import TextInput from '@grampro/svelte-block/TextInput.svelte';
+	import { Input } from '@grampro/svelte-block';
 
 	let textValue = ""
 </script>
 
 <div class="min-h-screen flex items-center justify-center">
-	<TextInput bind:value={textValue} />
+	<Input bind:value={textValue} />
 </div>
 
 ```
@@ -35,15 +35,14 @@ Example Code
 
 ```svelte
 <script lang="ts">
-	import TextInput from '@grampro/svelte-block/TextInput.svelte';
+	import { Input } from '@grampro/svelte-block';
 
 	let OTPValue: any;
 </script>
 
 <div class="min-h-screen flex items-center justify-center">
-	<TextInput OTPFeild OTPLength={4} bind:OTPValue  />
+	<Input OTPFeild OTPLength={4} bind:OTPValue  />
 </div>
-
 ```
 
 #### Props

@@ -25,7 +25,7 @@ Toast notifications are brief, non-intrusive alerts that provide feedback to use
 ```svelte
 <script lang="ts">
   import { addToast } from "@grampro/svelte-block/addToast";
-  import Button from "@grampro/svelte-block/Button.svelte";
+  import { Button } from "@grampro/svelte-block";
 
   let toastSettings = {
     message: "Anakkin: I kill em!",
@@ -47,7 +47,7 @@ Toast notifications are brief, non-intrusive alerts that provide feedback to use
 ```svelte
 <script lang="ts">
   import { addToast } from "@grampro/svelte-block/addToast";
-  import Button from "@grampro/svelte-block/Button.svelte";
+  import { Button } from "@grampro/svelte-block";
 
   let toastSettings = {
     message: "Your Phone Linging!",
@@ -87,7 +87,7 @@ You can specify Toast position as below.
 
 ```svelte
 <script>
-	import Toasts from '@grampro/svelte-block/Toasts.svelte';
+	import { Toasts } from '@grampro/svelte-block';
 	import './app.css';
 </script>
 

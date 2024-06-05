@@ -8,7 +8,7 @@ Button component is a fundamental element in user interface design, enabling use
 
 ```svelte
 <script lang="ts">
-	import Button from '@grampro/svelte-block/Button.svelte';
+	import { Button } from '@grampro/svelte-block';
 </script>
 
 <div>
@@ -22,7 +22,7 @@ Button component is a fundamental element in user interface design, enabling use
 
 ```svelte
 <script lang="ts">
-  import Button from "@grampro/svelte-block/Button.svelte";
+  import { Button } from "@grampro/svelte-block";
   import { Bug } from "lucide-svelte";
 </script>
 
