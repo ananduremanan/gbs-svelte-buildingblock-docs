@@ -77,20 +77,6 @@
     localStorage.removeItem("isBoring");
   });
 
-  onMount(() => {
-    getScore();
-    checkIsBoring();
-    board = document.getElementById("board");
-    board.height = total_row * blockSize;
-    board.width = total_col * blockSize;
-    context = board.getContext("2d");
-
-    placeFood();
-    document.addEventListener("keyup", changeDirection);
-    // Set snake speed
-    setInterval(update, 1000 / 10);
-  });
-
   function update() {
     if (gameOver) {
       return;
@@ -175,6 +161,19 @@
     placeFood();
     score = 0; // Reset score when starting again
   }
+
+  onMount(() => {
+    getScore();
+    checkIsBoring();
+    board = document.getElementById("board");
+    board.height = total_row * blockSize;
+    board.width = total_col * blockSize;
+    context = board.getContext("2d");
+    placeFood();
+    document.addEventListener("keyup", changeDirection);
+    // Set snake speed
+    setInterval(update, 1000 / 10);
+  });
 </script>
 
 <div class="overflow-y-hidden">
