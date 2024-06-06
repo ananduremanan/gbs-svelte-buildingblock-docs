@@ -65,6 +65,7 @@
     try {
       await signOut(auth);
       isLoggedIn = false;
+      localStorage.removeItem("isBoring");
       goto("/");
     } catch (error) {
       console.error("Error logging out: ", error);
@@ -243,7 +244,10 @@
     <div class="flex items-center justify-center flex-col">
       <p class="text-4xl">🎉Yay!! You Found It!!</p>
 
-      <button on:click={login} class="bg-green-400 text-white border p-2 rounded-lg">
+      <button
+        on:click={login}
+        class="bg-green-400 text-white border p-2 rounded-lg"
+      >
         Login with GitHub to continue
       </button>
     </div>
