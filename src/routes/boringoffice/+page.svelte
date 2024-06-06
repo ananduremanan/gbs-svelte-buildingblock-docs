@@ -7,6 +7,25 @@
   import { getFirestore } from "firebase/firestore";
   import { doc, setDoc, getDocs, collection } from "firebase/firestore";
 
+  let error: boolean = false;
+  let score: number = 0;
+  let showModal: boolean = false;
+  let name: string = "";
+  let blockSize = 25;
+  let total_row = 17;
+  let total_col = 17;
+  let board: any;
+  let context: any;
+  let snakeX = blockSize * 5;
+  let snakeY = blockSize * 5;
+  let speedX = 0; //speed of snake in x coordinate.
+  let speedY = 0; //speed of snake in Y coordinate.
+  let snakeBody: any[] = [];
+  let foodX: any;
+  let foodY: any;
+  let gameOver = false;
+  let scoresArray: any[] = [];
+
   const firebaseConfig = {
     apiKey: import.meta.env.VITE_APIKEY,
     authDomain: import.meta.env.VITE_AUTHDOMAIN,
@@ -18,19 +37,6 @@
 
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
-
-  async function handleSubmit(name: string, score: number) {
-    try {
-      const scoresCollectionRef = doc(db, "scores", name);
-      await setDoc(scoresCollectionRef, { score: score });
-      showModal = false;
-      getScore();
-    } catch (error) {
-      console.error("Error adding document: ", error);
-    }
-  }
-
-  let scoresArray: any[] = [];
 
   async function getScore() {
     try {
@@ -47,10 +53,16 @@
     }
   }
 
-  let error: boolean = false;
-  let score: number = 0;
-  let showModal: boolean = false;
-  let name: string = "";
+  async function handleSubmit(name: string, score: number) {
+    try {
+      const scoresCollectionRef = doc(db, "scores", name);
+      await setDoc(scoresCollectionRef, { score: score });
+      showModal = false;
+      getScore();
+    } catch (error) {
+      console.error("Error adding document: ", error);
+    }
+  }
 
   function checkIsBoring() {
     const isBoring = localStorage.getItem("isBoring");
@@ -64,26 +76,6 @@
   beforeNavigate(() => {
     localStorage.removeItem("isBoring");
   });
-
-  let blockSize = 25;
-  let total_row = 17;
-  let total_col = 17;
-  let board: any;
-  let context: any;
-
-  let snakeX = blockSize * 5;
-  let snakeY = blockSize * 5;
-
-  // Set the total number of rows and columns
-  let speedX = 0; //speed of snake in x coordinate.
-  let speedY = 0; //speed of snake in Y coordinate.
-
-  let snakeBody: any[] = [];
-
-  let foodX: any;
-  let foodY: any;
-
-  let gameOver = false;
 
   onMount(() => {
     getScore();
@@ -103,8 +95,7 @@
     if (gameOver) {
       return;
     }
-
-    // Background of a Game
+    // Background of the Game
     context.fillStyle = "orange";
     context.fillRect(0, 0, board.width, board.height);
 
@@ -170,7 +161,6 @@
   function placeFood() {
     // in x coordinates.
     foodX = Math.floor(Math.random() * total_col) * blockSize;
-
     //in y coordinates.
     foodY = Math.floor(Math.random() * total_row) * blockSize;
   }
@@ -202,7 +192,7 @@
       </div>
     </div>
   {:else}
-    <div class="max-sm:hidden">
+    <div class="max-md:hidden">
       <div class="text-4xl font-bold mb-8">Bored of Office? Play Some Game</div>
       <div class="lg:flex gap-4">
         <div>
@@ -216,7 +206,7 @@
         <div>
           {#if scoresArray.length > 0}
             <div class="mt-4">Top Score</div>
-            <div>
+            <div class="h-96 overflow-y-auto pr-20">
               {#if scoresArray.length > 0}
                 <div>
                   {#each scoresArray.sort((a, b) => b.score - a.score) as score}
@@ -235,7 +225,9 @@
     class="md:hidden flex flex-col justify-center items-center text-sm text-center gap-4"
   >
     <img src="/file.png" alt="error" class="w-20 h-20 m-0 mt-12" />
-    <span>Sorry!!<br /> This page can't be viewed on a mobile device</span>
+    <span
+      >Sorry!!<br /> This page can't be viewed on a mobile device or Smaller Screens</span
+    >
   </div>
 </div>
 
