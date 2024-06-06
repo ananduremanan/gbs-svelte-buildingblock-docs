@@ -1,11 +1,18 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { beforeNavigate } from "$app/navigation";
+  import { beforeNavigate, goto } from "$app/navigation";
   import { Modal } from "@grampro/svelte-block";
   import { initializeApp } from "firebase/app";
   import "firebase/firestore";
   import { getFirestore } from "firebase/firestore";
   import { doc, setDoc, getDocs, collection } from "firebase/firestore";
+  import {
+    getAuth,
+    GithubAuthProvider,
+    signInWithPopup,
+    onAuthStateChanged,
+    signOut,
+  } from "firebase/auth";
 
   let error: boolean = false;
   let score: number = 0;
@@ -25,6 +32,7 @@
   let foodY: any;
   let gameOver = false;
   let scoresArray: any[] = [];
+  let isLoggedIn: boolean = false;
 
   const firebaseConfig = {
     apiKey: import.meta.env.VITE_APIKEY,
@@ -37,6 +45,31 @@
 
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
+  const auth = getAuth();
+  const provider = new GithubAuthProvider();
+
+  async function login() {
+    try {
+      const res = await signInWithPopup(auth, provider);
+      if (!res) {
+        throw new Error("Could not complete signup");
+      }
+      const user = res.user;
+      console.log(user);
+    } catch (error) {
+      console.error("Error logging in: ", error);
+    }
+  }
+
+  async function logout() {
+    try {
+      await signOut(auth);
+      isLoggedIn = false;
+      goto("/");
+    } catch (error) {
+      console.error("Error logging out: ", error);
+    }
+  }
 
   async function getScore() {
     try {
@@ -163,16 +196,32 @@
   }
 
   onMount(() => {
-    getScore();
     checkIsBoring();
-    board = document.getElementById("board");
-    board.height = total_row * blockSize;
-    board.width = total_col * blockSize;
-    context = board.getContext("2d");
-    placeFood();
-    document.addEventListener("keyup", changeDirection);
-    // Set snake speed
-    setInterval(update, 1000 / 10);
+    if (!error) {
+      onAuthStateChanged(auth, (currentUser) => {
+        if (currentUser) {
+          isLoggedIn = true;
+          getScore();
+          // Use a setTimeout to ensure the DOM is fully loaded
+          setTimeout(() => {
+            board = document.getElementById("board");
+
+            if (board) {
+              board.height = total_row * blockSize;
+              board.width = total_col * blockSize;
+              context = board.getContext("2d");
+              placeFood();
+              document.addEventListener("keyup", changeDirection);
+              setInterval(update, 1000 / 10);
+            } else {
+              console.error("Board element not found");
+            }
+          }, 0);
+        } else {
+          isLoggedIn = false;
+        }
+      });
+    }
   });
 </script>
 
@@ -190,6 +239,14 @@
         </p>
       </div>
     </div>
+  {:else if !isLoggedIn}
+    <div class="flex items-center justify-center flex-col">
+      <p class="text-4xl">🎉Yay!! You Found It!!</p>
+
+      <button on:click={login} class="bg-green-400 text-white border p-2 rounded-lg">
+        Login with GitHub to continue
+      </button>
+    </div>
   {:else}
     <div class="max-md:hidden">
       <div class="text-4xl font-bold mb-8">Bored of Office? Play Some Game</div>
@@ -201,6 +258,7 @@
             <button on:click={startAgain}>Start Again</button>
           {/if}
           <div>Click on Arrow Keys to Start</div>
+          <button on:click={logout}>Logout</button>
         </div>
         <div>
           {#if scoresArray.length > 0}

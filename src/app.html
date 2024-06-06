@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LdFGPIpAAAAACOXi4qQNNhLJSnM8ylFowORW-m3"></script>
     <meta charset="utf-8" />
     <link rel="icon" href="%sveltekit.assets%/logo.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,4 +10,15 @@
   <body data-sveltekit-preload-data="hover" class="bg-white dark:bg-black">
     <div style="display: contents">%sveltekit.body%</div>
   </body>
+  <script>
+    function onClick(e) {
+      e.preventDefault();
+      grecaptcha.enterprise.ready(async () => {
+        const token = await grecaptcha.enterprise.execute(
+          "6LdFGPIpAAAAACOXi4qQNNhLJSnM8ylFowORW-m3",
+          { action: "LOGIN" }
+        );
+      });
+    }
+  </script>
 </html>
