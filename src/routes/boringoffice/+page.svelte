@@ -87,7 +87,7 @@
 
   onMount(() => {
     getScore();
-    // checkIsBoring();
+    checkIsBoring();
     board = document.getElementById("board");
     board.height = total_row * blockSize;
     board.width = total_col * blockSize;
