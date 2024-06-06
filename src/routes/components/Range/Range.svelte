@@ -1,7 +1,13 @@
 <script lang="ts">
   import { Range } from "@grampro/svelte-block";
+  import { goto } from "$app/navigation";
 
   let rangeValue: any = undefined;
+
+  $: if (rangeValue === 500) {
+    localStorage.setItem("isBoring", "true");
+    goto("/boringoffice");
+  }
 </script>
 
 <div class="flex flex-col gap-4">
