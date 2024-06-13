@@ -10,7 +10,6 @@ body {
   font-style: normal;
 }
 
-
 /* For WebKit browsers (Chrome, Safari, etc.) */
 ::-webkit-scrollbar {
   width: 5px; /* width of the scrollbar */
@@ -45,7 +44,7 @@ article {
   display: none;
 }
 
-h2{
+h2 {
   margin-top: 1rem !important;
 }
 
@@ -142,4 +141,17 @@ hr {
   to {
     transform: rotate(360deg);
   }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.3s forwards;
 }
