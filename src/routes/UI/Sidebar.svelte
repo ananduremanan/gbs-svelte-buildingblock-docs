@@ -23,7 +23,7 @@
 </script>
 
 <div
-  class={`h-full border-r overflow-y-auto bg-white dark:bg-black dark:text-white p-4 transition-all transform w-80 ${!showSideBar ? "hidden" : "block w-64 slide-in"} md:block`}
+  class={`h-full border-r overflow-y-auto bg-white dark:bg-black dark:text-white p-4 transition-all transform w-80 ${!showSideBar ? "hidden" : "block w-64"} md:block`}
 >
   <ul>
     <li
