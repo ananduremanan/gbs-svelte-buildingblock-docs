@@ -47,6 +47,9 @@
         assignIdsToHeadings(article);
       }
     }
+  }
+
+  async function fetchVersions() {
     latestBetaVersion = await getLatestBetaVersion();
     let latestVersion = await getLatestVersion();
 
@@ -57,7 +60,10 @@
     }
   }
 
-  onMount(init);
+  onMount(async () => {
+    await init();
+    await fetchVersions();
+  });
   afterUpdate(init);
 </script>
 
