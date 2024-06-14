@@ -1,7 +1,7 @@
 <script lang="ts">
-  import TextInput from "@grampro/svelte-block/TextInput.svelte";
+  import { Input } from "@grampro/svelte-block";
 
   export let OTPFeildClient: boolean = false;
 </script>
 
-<TextInput OTPFeild={OTPFeildClient} placeholder="Enter Something" />
+<Input OTPFeild={OTPFeildClient} placeholder="Enter Something" />

@@ -1,7 +1,3 @@
-<script>
-	import Grid from './Grid.svelte'
-</script>
-
 ### Grid
 
 Grids are powerful tools for organizing, visualizing, and interacting with tabular data in software applications.
