@@ -1,3 +1,7 @@
+<script>
+    import DatePicker from './DatePicker.svelte'
+</script>
+
 ### DatePicker
 
 The DatePicker component provides users with an intuitive interface for selecting dates within a specified range. It allows for seamless integration into web applications, enabling users to input dates effortlessly and accurately.
@@ -15,6 +19,10 @@ Build with Bits.UI and Shadcn Svelte.
 <DatePicker bind:value />
 
 ```
+
+#### Sample
+
+<DatePicker />
 
 #### Props
 
