@@ -13,7 +13,8 @@ The DatePicker component provides users with an intuitive interface for selectin
 	import DatePicker from '$lib/datepicker/DatePicker.svelte';
 
 	let value: any;
-	const today = new Date();
+    const today = new Date();
+
 </script>
 
 <div class="mt-4 flex items-center justify-center">
