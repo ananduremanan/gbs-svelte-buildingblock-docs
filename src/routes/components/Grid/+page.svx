@@ -241,7 +241,7 @@ Exmaple
 	};
 </script>
 
-<Grid2
+<Grid
 	columns={gitDataColumns}
 	dataSource={gitData}
 	pageSettings={{ pageNumber: 10 }}
