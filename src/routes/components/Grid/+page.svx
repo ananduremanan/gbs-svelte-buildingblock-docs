@@ -104,7 +104,7 @@ Grids are powerful tools for organizing, visualizing, and interacting with tabul
 
 Beta Features for grid(May have bugs)(Check the latest beta version [Here](https://www.npmjs.com/package/@grampro/svelte-block/v/0.0.29-4-beta?activeTab=versions))
 
-#### Grid rows are now editable!!!
+#### Editable Grid Rows
 
 Grid rows can be edit now (Only Add New Row Feature is Implemented).
 
@@ -144,7 +144,7 @@ Example
 
 Editing Grid can be tricky sometimes when you handle different types on inputs, in such cases add type key in the columns array.
 
-#### Grid can now support different page options for pdf export
+#### Page options for pdf export
 
 Page options for pdf export lets you change the default settings(layout: 'portrait', paperSize: 'a4') for pdf pages.
 
@@ -152,7 +152,7 @@ Example
 
 ```svelte
 <script>
-	import Grid from '$lib/grid/Grid2.0.svelte';
+	import Grid from '@grampro/svelte-block';
 	import { dataSource } from '$lib/dataSource';
 
 	const columns = [
@@ -185,3 +185,70 @@ pdfOptions:
 - layout : "portrait" | "landscape"
 - paperSize: 'a3' | 'a4' | 'letter' | 'legal' | 'tabloid' | 'statement' | 'executive'
 
+#### Navigating to a Particular page in Grid
+
+Going to a Page in Grid is essential sometimes, this can be achieved by invoking a ref of grid and calling goToPage()
+
+Example
+
+```svelte
+<script>
+	import { Grid } from '@grampro/svelte-block';
+
+	let gridRef: any;
+
+	function clickInstance() {
+		if (gridRef) {
+			gridRef.goToPage(2); // Invoking goToPage(pageIndex) from Grid
+		}
+	}
+</script>
+
+<Grid
+	columns={gitDataColumns}
+	dataSource={gitData}
+	pageSettings={{ pageNumber: 10 }}
+	enableSearch
+	enablePdfExport
+	pdfName="win-data"
+	bind:this={gridRef}
+	/>
+```
+
+#### Letting the Grid Know: An Asynchronous Operation
+
+Managing data updates and user interactions is crucial. "Letting the Grid Know" is an approach designed to seamlessly 
+handle asynchronous operations such as data fetching and add a visual indicator in such case. This can be achieved by the prop `isFetching`
+
+Exmaple
+
+```svelte
+<script>
+	import { Grid } from '@grampro/svelte-block';
+
+	let isFetching = false;
+
+	// Async Function
+	const getData = async () => {
+		try {
+			isFetching = true;
+			//....
+		} catch (error) {
+			console.error(error);
+		} finally {
+			isFetching = false;
+		}
+	};
+</script>
+
+<Grid2
+	columns={gitDataColumns}
+	dataSource={gitData}
+	pageSettings={{ pageNumber: 10 }}
+	enableSearch
+	enablePdfExport
+	pdfName="win-data"
+	bind:this={gridRef}
+	{isFetching} // Pass here to output a visual Loader while fetching.
+	/>
+```
