@@ -100,10 +100,6 @@ Grids are powerful tools for organizing, visualizing, and interacting with tabul
     { field: "place", headerText: "Place", width: "200" },
   ];
 ```
-#### It's Beta Time
-
-Beta Features for grid(May have bugs)(Check the latest beta version [Here](https://www.npmjs.com/package/@grampro/svelte-block/v/0.0.29-4-beta?activeTab=versions))
-
 #### Editable Grid Rows
 
 Grid rows can be edit now (Only Add New Row Feature is Implemented).
