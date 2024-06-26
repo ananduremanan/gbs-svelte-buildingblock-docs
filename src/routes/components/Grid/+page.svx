@@ -252,3 +252,45 @@ Exmaple
 	{isFetching} // Pass here to output a visual Loader while fetching.
 	/>
 ```
+
+#### How to render Custom template in Grid Columns
+
+Grid Supports rendering custom svelete component in grid cells.
+
+Example
+
++page.svelte
+```svelte 
+<script>
+	import { Grid } from '@grampro/svelte-block';
+	import Input from '$lib/Input.svelte';
+	import SerialNumber from '$lib/SerialNumber.svelte';
+	import { dataSource } from '$lib/dataSource';
+
+	const columns = [
+		{ field: 'Sl. No', width: '80', textAlign: 'Right', template: SerialNumber },
+		{ field: 'OrderID', width: '100', textAlign: 'Right' },
+		{ field: 'CustomerID', width: '100' },
+		{ field: 'EmployeeID', width: '100', textAlign: 'Right' },
+		{ field: 'Freight', headerText: 'Frieght', width: '100' },
+		{ field: 'ShipCountry', width: '100' },
+		{ field: 'ShipAddress', width: '150' },
+		{ field: 'Remarks', headerText: 'Remarks', template: Input, width: '200' }
+	];
+</script>
+
+<div class="m-4">
+	<Grid2 {columns} {dataSource} pageSettings={{ pageNumber: 10 }} />
+</div>
+```
+
+Input.svelte
+```svelte
+<script>
+	import { Grid } from '@grampro/svelte-block';
+	export let rowIndex;
+	export let rowData;
+</script>
+
+<input placeholder="Enter Remarks" id={`gbs-${rowIndex}`} bind:value={rowData.remarks} />
+```
