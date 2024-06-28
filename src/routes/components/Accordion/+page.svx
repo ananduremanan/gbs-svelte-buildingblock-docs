@@ -1,0 +1,29 @@
+<script>
+	import  Accordion  from './Accordion.svelte'
+</script>	
+
+### Accordion(Beta)
+
+Experimental Component. Import it in your page component to show a Accordion.
+
+#### Usage
+
+```svelte
+<script>
+	import { BreadCrumb } from '@grampro/svelte-block';
+</script>
+
+<Accordion />
+```
+
+#### Sample
+
+<Accordion />
+
+#### Props
+
+| Property                 | Type     | Default            | Description                                                                              |
+| ------------------------ | -------- | ------------------ | ---------------------------------------------------------------------------------------- |
+| textActivePathColor    | string | text-black   | CSS classes to apply to the active path segment text color.                              |
+| textInactivePathColor  | string | text-gray-500  | CSS classes to apply to the inactive path segment text color.                            |
+| hoverStyle             | string | hover:underline| CSS classes to apply for hover effects on the path segments.                             |
