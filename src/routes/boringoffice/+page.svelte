@@ -55,7 +55,6 @@
         throw new Error("Could not complete signup");
       }
       const user = res.user;
-      console.log(user);
     } catch (error) {
       console.error("Error logging in: ", error);
     }
