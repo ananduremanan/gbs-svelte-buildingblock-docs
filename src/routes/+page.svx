@@ -12,7 +12,7 @@
 
 LatestVersion : <span class="font-bold">{latestVersion}<span>
 
-Svelte Version of GBS Building Block. Version. This Documentation describes how to install and use `@grampro/svelte-block` component library.
+Svelte Version of GBS Building Block. This Documentation describes how to install and use `@grampro/svelte-block` component library.
 
 ### Installation
 
