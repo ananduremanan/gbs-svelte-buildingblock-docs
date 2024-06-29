@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Accordion from "@grampro/svelte-block/Accordion.svelte";
+  import { Accordion } from "@grampro/svelte-block";
 
   const accordionItems = [
     {

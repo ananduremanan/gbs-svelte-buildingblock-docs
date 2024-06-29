@@ -7,7 +7,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "gbs-pkg-update": "rmdir /s /q \"./node_modules/@grampro\" && bun add @grampro/svelte-block@latest"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^3.0.0",
@@ -30,7 +31,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@grampro/svelte-block": "^0.0.42-beta",
+    "@grampro/svelte-block": "^0.0.42",
     "firebase": "^10.12.2",
     "flexsearch": "^0.7.43",
     "gray-matter": "^4.0.3",

@@ -1,0 +1,33 @@
+<script>
+    import Toggle from './Toggle.svelte'
+</script>
+
+### Toggle(Beta)
+
+Basic Toggle Switch For Forms.
+
+#### Usage
+
+page.svelte
+
+```svelte
+<script lang="ts">
+	import { Toggle } from '@grampro/svelte-block';
+</script>
+
+<Toggle />
+```
+
+#### Sample
+
+<Toggle />
+
+#### Props
+
+## Props
+
+| Property      | Type      | Description                                                |
+| ------------- | --------- | ---------------------------------------------------------- |
+| checked       | boolean   | Specifies whether the checkbox is checked or unchecked.    |
+| toggleClass   | string    | The CSS class applied to the toggle element.               |
+| disabled      | boolean   | The disabled State.                                        |
