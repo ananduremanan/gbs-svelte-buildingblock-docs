@@ -8,12 +8,39 @@ Experimental Component. Import it in your page component to show a Accordion.
 
 #### Usage
 
+accordionItems.ts
+```javascript
+export const accordionItems = [
+	{
+		title: 'E-Commerce',
+		children: [
+			{ title: 'Products', link: '#' },
+			{ title: 'Billing', link: '#' },
+		]
+	},
+	{
+		title: 'Inspection',
+		children: [
+			{ title: 'Product ID', link: '#' },
+			{ title: 'Product Info', link: '#' },
+			{ title: 'Invoice', link: '#' }
+		]
+	}
+];
+```
+page.svelte
+
 ```svelte
-<script>
-	import { BreadCrumb } from '@grampro/svelte-block';
+<script lang="ts">
+	import Accordion from '$lib/accordion/Accordion.svelte';
+	import { accordionItems } from '$lib/accordionitems';
 </script>
 
-<Accordion />
+<Accordion
+	{accordionItems}
+	accordionParentClass="py-2 w-full hover:bg-gray-200 px-1 rounded-md"
+	accordionChildClass="p-2 text-blue-400"
+/>
 ```
 
 #### Sample
@@ -22,8 +49,84 @@ Experimental Component. Import it in your page component to show a Accordion.
 
 #### Props
 
-| Property                 | Type     | Default            | Description                                                                              |
-| ------------------------ | -------- | ------------------ | ---------------------------------------------------------------------------------------- |
-| textActivePathColor    | string | text-black   | CSS classes to apply to the active path segment text color.                              |
-| textInactivePathColor  | string | text-gray-500  | CSS classes to apply to the inactive path segment text color.                            |
-| hoverStyle             | string | hover:underline| CSS classes to apply for hover effects on the path segments.                             |
+## Props
+
+| Prop                  | Type        | Default Value                           | Description                                                                                     				   |
+|-----------------------|-------------|-----------------------------------------|------------------------------------------------------------------------------------------------------------------|
+| accordionItems        | any[]       |                                         | The list of items to display in the accordion. Each item can have a `title`, `link`, `children`, or `component`. |
+| accordionParentClass  | string      | 'w-full p-4 text-left border-b-2'       | The CSS class applied to the parent accordion items.                                            				   |
+| accordionChildClass   | string      | 'p-1 text-blue-500 hover:underline'     | The CSS class applied to the child accordion items.                                             				   |
+| childComponentClass   | string      |                                         | The CSS class applied to custom child components.                                               				   |
+
+#### How to have nested childrens
+
+You can have nested childrens in the accordion.
+
+```javascript
+export const accordionItems = [
+	{
+		title: 'E-Commerce',
+		children: [
+			{ title: 'Products', link: '/products' },
+			{ title: 'Billing', link: '/billing' },
+			{
+				link: '/invoice',
+				children: [
+					{
+						title: 'Invoice ',
+						children: [
+							{
+								children: [
+									{
+										title: 'Calculator',
+										children: [
+											{ title: 'Product ID', link: '/products_id' },
+											{ title: 'Product Info', link: '/product_info' },
+											{ title: 'Invoice', link: '/invoice' }
+										]
+									}
+								],
+								link: '/products'
+							}
+						]
+					}
+				]
+			}
+		]
+	},
+	{
+		title: 'Inspection',
+		children: [
+			{ title: 'Product ID', link: '/products_id' },
+			{ title: 'Product Info', link: '/product_info' },
+			{ title: 'Invoice', link: '/invoice' }
+		]
+	}
+];
+```
+
+#### How to have custom component as children?
+
+You can have custom components as childrens of accordion.
+
+```javascript
+import { Input } from './Input.svelte';
+
+export const accordionItems = [
+	{
+		title: 'E-Commerce',
+		children: [
+			{ title: 'Products', link: '/products' },
+			{ title: 'Billing', component: Input }
+		]
+	},
+	{
+		title: 'Inspection',
+		children: [
+			{ title: 'Product ID', link: '/products_id' },
+			{ title: 'Product Info', link: '/product_info' },
+			{ title: 'Invoice', link: '/invoice' }
+		]
+	}
+];
+```
