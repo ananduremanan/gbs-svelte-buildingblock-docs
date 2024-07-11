@@ -1,0 +1,61 @@
+### Generics
+
+Generics are experimental methods comes with gramlib for providing generic functions for mundane operations. 
+
+#### getData()
+
+A generic function build upon javascript Fetch for GET http method
+
+##### Usage
+
+```svelte
+<script>
+import { getData } from "@grampro/svelte-block/generics";
+
+async function fetchData() {
+    const data = await getData("api_url/get_student_names"); // Accepts One Param(APIURL)
+    if (data.success) {
+      dataSource = data;
+    }
+  }
+</script>
+```
+
+#### setData()
+
+A generic function build upon javascript Fetch for POST http method
+
+##### Usage
+
+```svelte
+<script>
+import { setData } from "@grampro/svelte-block/generics";
+
+async function handleSubmit() {
+    let stuData = { mode: 1, ...studentData };
+    // Set Data Accepts Two Params (Apiurl and data to send)
+    const data = await setData(
+      "apiUrl/set_student_names",
+      stuData
+    );
+    if (data.success) {
+      dispatch("submit", true);
+    }
+  }
+</script>
+```
+
+#### sort()
+
+A generic sort function build upon javascript sort.
+
+##### Usage
+
+```svelte
+<script>
+import { sort } from "@grampro/svelte-block/generics";
+
+// Accepts two params(An Array and a search condition)
+let sorted_array = await sort(data, "student_id");
+</script>
+```
