@@ -102,7 +102,7 @@ Grids are powerful tools for organizing, visualizing, and interacting with tabul
 ```
 #### Editable Grid Rows
 
-Grid rows can be edit now (Only Add New Row Feature is Implemented).
+Grid rows can be edit now (Only Add New Row Feature & Delete is Implemented).
 
 Example
 
@@ -139,6 +139,43 @@ Example
 ```
 
 Editing Grid can be tricky sometimes when you handle different types on inputs, in such cases add type key in the columns array.
+
+For Further Processing the edited data you can use the two additional event functions `on:entryAdded` & `on:entryDeleted` (For adding data to grid and deleteing data respectfully).
+
+Example
+
+```svelte
+<script>
+	import Grid from '@grampro/svelte-block';
+	import { dataSource } from '$lib/dataSource';
+
+	function handleEntryAdded(event: any) {
+     const { newEntry } = event.detail;
+     console.log("New entry added:", newEntry);
+  	}
+
+  function handleEntryDeleted(event: any) {
+    const { deletedIndex } = event.detail;
+    console.log("Entry deleted at index:", deletedIndex);
+  }
+</script>
+
+<div class="mx-8 mt-8">
+	 <Grid
+        {dataSource}
+        {columns}
+        pageSettings={{ pageNumber: 5 }}
+        enableSearch
+        enablePdfExport
+        pdfName={"Student_data"}
+        gridPaginationButtonClass="bg-violet-600"
+        enableEditingBox
+        on:entryAdded={handleEntryAdded}
+        on:entryDeleted={handleEntryDeleted}
+      />
+</div>
+```
+
 
 #### Page options for pdf export
 
