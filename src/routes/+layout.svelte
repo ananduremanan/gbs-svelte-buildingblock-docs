@@ -70,7 +70,7 @@
 <Toasts position="bottom-0 right-0" />
 <div class="flex flex-col h-screen">
   <div
-    class="w-full bg-black dark:bg-gray-700 text-white flex justify-center text-sm py-1 relative"
+    class="w-full bg-black dark:bg-gray-700 text-white flex flex-col justify-center text-sm py-1 relative text-center"
   >
     <a
       target="_blank"
@@ -80,6 +80,16 @@
         class="animate-ping absolute inline-flex h-1 w-1 rounded-full bg-red-600 ml-1 mt-1"
       ></span>
     </a>
+    <br />
+    <span class="text-xs text-red-500 -mt-5"
+      >(This library will update to svelte 5 as soon as the official release
+      with Svelte 5 <span
+        ><a
+          href="https://svelte.dev/blog/svelte-5-release-candidate"
+          class="text-blue-500">Click To Know More</a
+        ></span
+      >)</span
+    >
   </div>
   <Navbar
     on:mobile_menu_clicked={() => {
