@@ -8,6 +8,8 @@
   });
 </script>
 
+<a href="https://www.npmjs.com/package/@grampro/svelte5-block?activeTab=versions" target="_blank"><img src="/runes.png" alt="svelte next" class="rounded-lg" /></a>
+
 ## Introduction
 
 LatestVersion : <span class="font-bold">{latestVersion}<span>

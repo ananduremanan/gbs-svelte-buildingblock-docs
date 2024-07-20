@@ -80,16 +80,6 @@
         class="animate-ping absolute inline-flex h-1 w-1 rounded-full bg-red-600 ml-1 mt-1"
       ></span>
     </a>
-    <br />
-    <span class="text-xs text-red-500 -mt-5"
-      >(This library will update to svelte 5 as soon as the official release
-      with Svelte 5 <span
-        ><a
-          href="https://svelte.dev/blog/svelte-5-release-candidate"
-          class="text-blue-500">Click To Know More</a
-        ></span
-      >)</span
-    >
   </div>
   <Navbar
     on:mobile_menu_clicked={() => {
