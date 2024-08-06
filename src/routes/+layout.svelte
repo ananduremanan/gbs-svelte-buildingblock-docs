@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { ClipboardCleanOutline } from "flowbite-svelte-icons";
   import "../app.css";
   import Navbar from "./UI/Navbar.svelte";
   import Sidebar from "./UI/Sidebar.svelte";
