@@ -14,7 +14,7 @@
   const dispatch = createEventDispatcher();
 </script>
 
-<nav class="bg-white px-4 py-1 border-b dark:bg-black dark:text-white lg:px-8">
+<nav class="bg-white px-4 py-1 border-b dark:bg-gray-900 dark:text-white lg:px-8">
   <div class="container mx-auto flex justify-between items-center">
     <span class="text-lg font-semibold flex items-center gap-2"
       ><button

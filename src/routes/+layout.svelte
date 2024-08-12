@@ -89,7 +89,7 @@
     <Sidebar bind:showSideBar />
     <div class="p-1 flex-1 overflow-auto content-container">
       <article
-        class="prose lg:prose-xl dark:prose-invert px-4 md:text-base sx-content dark:prose-pre:bg-gray-700 mb-8"
+        class="prose prose-pre:bg-pre-400 lg:prose-xl dark:prose-invert px-4 md:text-base sx-content dark:prose-pre:bg-pre-400 mb-8"
       >
         <slot />
 

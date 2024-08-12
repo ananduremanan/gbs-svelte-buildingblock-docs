@@ -23,7 +23,7 @@
 </script>
 
 <div
-  class={`h-full border-r overflow-y-auto bg-white dark:bg-black dark:text-white p-4 transition-all transform w-80 ${!showSideBar ? "hidden" : "block w-64"} md:block`}
+  class={`h-full border-r overflow-y-auto bg-white dark:bg-gray-900 dark:text-white p-4 transition-all transform w-80 ${!showSideBar ? "hidden" : "block w-64"} md:block scrollbar`}
 >
   <ul>
     <li
@@ -65,3 +65,24 @@
     </li>
   </ul>
 </div>
+
+<style>
+	.scrollbar::-webkit-scrollbar {
+		margin-top: 20px;
+		width: 5px;
+		height: 10px;
+	}
+
+	.scrollbar::-webkit-scrollbar-track {
+		border-radius: 100vh;
+	}
+
+	.scrollbar::-webkit-scrollbar-thumb {
+		background: #b6cdeacc;
+		border-radius: 100vh;
+	}
+
+	.scrollbar::-webkit-scrollbar-thumb:hover {
+		background: #c0a0b9;
+	}
+</style>
