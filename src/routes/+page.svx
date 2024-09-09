@@ -18,11 +18,13 @@ Svelte Version of GBS Building Block. This Documentation describes how to instal
 
 ### Installation
 
-svelte 4
+svelte 4 <span class="px-1 text-white bg-red-500 rounded-lg text-xs">Will Deprecate Soon</span>
 
-```bash
-    npm i @grampro/svelte-block
-```
+<strike>
+    <pre>
+      <code>npm i @grampro/svelte-block</code>
+    </pre>
+</strike>
 
 <div class="bg-blue-200 p-2 rounded-lg dark:bg-blue-800">
 <span class="font-bold">svelte 5(Beta Channel)</span>

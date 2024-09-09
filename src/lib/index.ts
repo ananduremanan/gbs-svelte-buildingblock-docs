@@ -4,16 +4,19 @@ export async function getLatestVersion() {
   let latestVersion;
 
   const res = await fetch(
-    "https://registry.npmjs.org/@grampro/svelte-block/latest"
+    "https://www.npmjs.com/package/@grampro/svelte5-block/latest"
   );
   const ver = await res.json();
   latestVersion = ver.version;
+
+  console.log(latestVersion);
+
   return latestVersion;
 }
 
 export async function getLatestBetaVersion() {
   let error = "";
-  const url = `https://registry.npmjs.org/@grampro/svelte-block`;
+  const url = `https://www.npmjs.com/package/@grampro/svelte5-block`;
 
   try {
     const response = await fetch(url);

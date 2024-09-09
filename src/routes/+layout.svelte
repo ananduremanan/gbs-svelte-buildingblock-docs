@@ -71,10 +71,19 @@
   <div
     class="w-full bg-black dark:bg-gray-700 text-white flex flex-col justify-center text-sm py-1 relative text-center"
   >
+    <!-- <a
+      target="_blank"
+      href="https://www.npmjs.com/package/@grampro/svelte5-block?activeTab=versions"
+      >🎉{latestBetaVersion} is Live Now
+      <span
+        class="animate-ping absolute inline-flex h-1 w-1 rounded-full bg-red-600 ml-1 mt-1"
+      ></span>
+    </a> -->
+
     <a
       target="_blank"
-      href="https://www.npmjs.com/package/@grampro/svelte-block?activeTab=versions"
-      >🎉{latestBetaVersion} is Live Now
+      href="https://www.npmjs.com/package/@grampro/svelte5-block?activeTab=versions"
+      >Install the latest svelte5-block
       <span
         class="animate-ping absolute inline-flex h-1 w-1 rounded-full bg-red-600 ml-1 mt-1"
       ></span>
