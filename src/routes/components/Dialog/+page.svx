@@ -1,0 +1,62 @@
+# Dialog
+
+The Dialog component provides a modal dialog with customizable messages and actions.
+
+#### +page.svelte
+
+```svelte
+<script lang="ts">
+	import {Dialog} from '@grampro/svelte5-block';
+
+	let showDialog = true;
+
+	function handleActionOneClick() {
+		console.log('Action One Clicked');
+		showDialog = false;
+	}
+
+	function handleActionTwoClick() {
+		console.log('Action Two Clicked');
+		showDialog = false;
+	}
+</script>
+
+<div class="mt-4 flex items-center justify-center">
+	<Dialog
+		{showDialog}
+		dialogMessage="Do you want to proceed?"
+		dialogActionOne="Yes"
+		dialogActionTwo="No"
+		onDialogActionOneClick={handleActionOneClick}
+		onDialogActionTwoClick={handleActionTwoClick}
+	/>
+</div>
+```
+
+#### Sample
+
+```svelte
+<Dialog
+	showDialog
+	dialogMessage="Are you sure you want to continue?"
+	dialogActionOne="Confirm"
+	dialogActionTwo="Cancel"
+	onDialogActionOneClick={() => console.log('Confirmed')}
+	onDialogActionTwoClick={() => console.log('Cancelled')}
+/>
+```
+
+## Props
+
+| Property                  | Type     | Description                                                              |
+| -------------------------- | -------- | ------------------------------------------------------------------------ |
+| showDialog              | boolean | Controls the visibility of the dialog.                                   |
+| dialogMessage           | string  | The message displayed in the dialog.                                     |
+| dialogActionOne         | string  | The text for the first action button.                                    |
+| dialogActionTwo         | string  | The text for the second action button.                                   |
+| onDialogActionOneClick  | function| Callback function for the first action button click event.               |
+| onDialogActionTwoClick  | function| Callback function for the second action button click event.              |
+| dialogClass             | string  | Custom CSS classes for the dialog container.                             |
+| dialogContentClass      | string  | Custom CSS classes for the dialog content.                               |
+| dialogActionTwoStyle    | string  | Custom CSS classes for the second action button.                         |
+| dialogActionOneStyle    | string  | Custom CSS classes for the first action button.                          |
