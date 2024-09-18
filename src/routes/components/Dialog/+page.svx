@@ -1,4 +1,4 @@
-# Dialog
+### Dialog
 
 The Dialog component provides a modal dialog with customizable messages and actions.
 
@@ -46,7 +46,7 @@ The Dialog component provides a modal dialog with customizable messages and acti
 />
 ```
 
-## Props
+### Props
 
 | Property                  | Type     | Description                                                              |
 | -------------------------- | -------- | ------------------------------------------------------------------------ |
